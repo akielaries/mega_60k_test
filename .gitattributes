@@ -1,0 +1,2 @@
+# these are not f sharp files
+*.fs linguist-detectable=false
