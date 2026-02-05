@@ -1,0 +1,13 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AT-60B" pn="GW5AT-LV60PG484AC2/I1">gw5at60b-003</Device>
+    <FileList>
+        <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/pins.cst" type="file.cst" enable="1"/>
+        <File path="src/mega_60k_test.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

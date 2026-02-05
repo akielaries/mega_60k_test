@@ -1,0 +1,16 @@
+Reading netlist file: "/home/akiel/trunk/pub/mega_60k_test/impl/gwsynthesis/mega_60k_test.vg"
+Parsing netlist file "/home/akiel/trunk/pub/mega_60k_test/impl/gwsynthesis/mega_60k_test.vg" completed
+Processing netlist completed
+Reading constraint file: "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal '\Cortex_M1_instance/HCLK_d ' by the specified constraint. And then it may lead to the excessive delay or skew
+[90%] Routing Phase 3 completed

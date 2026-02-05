@@ -1,0 +1,38 @@
+[
+ {
+  "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 13,
+    "InstName" : "Cortex_M1_instance",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+    "ModuleLine" : 41300,
+    "ModuleName" : "Gowin_EMPU_M1_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+      "InstLine" : 41482,
+      "InstName" : "M1_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+      "ModuleLine" : 199,
+      "ModuleName" : "CortexM1DbgIntegrationWrapper"
+     },
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+      "InstLine" : 41597,
+      "InstName" : "u_GowinCM1AhbExtWrapper",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+      "ModuleLine" : 35905,
+      "ModuleName" : "GowinCM1AhbExtWrapper"
+     }
+    ]
+   }
+  ]
+ }
+]

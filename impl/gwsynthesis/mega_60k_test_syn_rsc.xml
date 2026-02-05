@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" T_Register="3000(0)" T_Alu="155(0)" T_Lut="5989(0)" T_MULT27X36="2(0)" T_Bsram="64(0)">
+ <SubModule name="Cortex_M1_instance" Register="3000" Alu="155" Lut="5989" MULT27X36="2" Bsram="64" T_Register="3000(3000)" T_Alu="155(155)" T_Lut="5989(5989)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
+</Module>

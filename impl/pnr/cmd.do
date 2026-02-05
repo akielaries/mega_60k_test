@@ -1,0 +1,19 @@
+-d /home/akiel/trunk/pub/mega_60k_test/impl/gwsynthesis/mega_60k_test.vg
+-p GW5AT-60B-PBGA484A-2
+-pn GW5AT-LV60PG484AC2/I1
+-cst /home/akiel/trunk/pub/mega_60k_test/src/pins.cst
+-cfg /home/akiel/trunk/pub/mega_60k_test/impl/pnr/device.cfg
+-sdc /home/akiel/trunk/pub/mega_60k_test/src/mega_60k_test.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000
+-enable_dsrm 0
