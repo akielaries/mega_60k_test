@@ -2,5 +2,6 @@
 //All rights reserved.
 //File Title: Timing Constraints file
 //Tool Version: V1.9.12.01 
-//Created Time: 2026-02-05 07:51:05
-create_clock -name HCLK -period 20 -waveform {0 10} [get_ports {HCLK}]
+//Created Time: 2026-02-05 14:47:11
+create_clock -name clk_in -period 20 -waveform {0 10} [get_ports {HCLK}]
+create_clock -name swd_clk -period 200 -waveform {0 100} [get_ports {JTAG_9_SWDCLK}]

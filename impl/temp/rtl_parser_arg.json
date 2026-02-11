@@ -2,11 +2,11 @@
  "Device" : "GW5AT-60B",
  "Files" : [
   {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
    "Type" : "verilog"
   }
  ],
