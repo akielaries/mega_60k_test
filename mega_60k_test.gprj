@@ -5,6 +5,7 @@
     <Version>5</Version>
     <Device name="GW5AT-60B" pn="GW5AT-LV60PG484AC2/I1">gw5at60b-003</Device>
     <FileList>
+        <File path="src/ahb_dummy.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
         <File path="src/top.v" type="file.verilog" enable="1"/>
         <File path="src/ws2812_driver.v" type="file.verilog" enable="1"/>

@@ -876,6 +876,7 @@ WARN  (EX1998) : Net 'wdog_reset_req' does not have a driver("/home/akiel/Downlo
 NOTE  (EX0101) : Current top module is "Gowin_EMPU_M1_Top"
 WARN  (EX0200) : Property "syn_encoding" set invalid for "JTAGcurr"("/home/akiel/Downloads/Gowin_V1.9.12.01_linux/IDE/ipcore/GOWIN_EMPU_M1/data/debug/DAPJtagDpProtocol.v":662)
 [5%] Running netlist conversion ...
+WARN  (CV0018) : Input AHB1HRESP[1] is unused("/home/akiel/Downloads/Gowin_V1.9.12.01_linux/IDE/ipcore/GOWIN_EMPU_M1/data/debug/Gowin_EMPU_M1_top.v":1014)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
