@@ -58,36 +58,7 @@ module top (
     ws2812_driver ws_drv (
         .clk(HCLK),
         .rstn(hwRstn),
-        .trigger(trigger),
-        .led_data(ws_color),
         .ws_out(WS2812_LED)
     );
-
-    always @(posedge HCLK or negedge hwRstn) begin
-        if (!hwRstn) begin
-            counter   <= 25'd0;
-            gpio1_out <= 1'b0;
-            trigger   <= 1'b0;
-            ws_color  <= 24'h00_FF_00; // RED
-        end else begin
-            if (counter == 25_000_000 - 1) begin
-                counter   <= 25'd0;
-                gpio1_out <= ~gpio1_out;
-                trigger   <= 1'b1;
-
-                // rotate RGB
-                if (ws_color == 24'h00_FF_00)
-                    ws_color <= 24'hFF_00_00; // GREEN
-                else if (ws_color == 24'hFF_00_00)
-                    ws_color <= 24'h00_00_FF; // BLUE
-                else
-                    ws_color <= 24'h00_FF_00; // RED
-
-            end else begin
-                counter <= counter + 1'b1;
-                trigger <= 1'b0;
-            end
-        end
-    end
 
 endmodule

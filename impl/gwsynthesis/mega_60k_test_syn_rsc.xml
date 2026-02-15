@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="30" Lut="52" T_Register="3073(30)" T_Alu="155(0)" T_Lut="6126(52)" T_MULT27X36="2(0)" T_Bsram="64(0)">
+<Module name="top" Register="26" Lut="44" T_Register="3094(26)" T_Alu="155(0)" T_Lut="6180(44)" T_MULT27X36="2(0)" T_Bsram="64(0)">
  <SubModule name="Cortex_M1_instance" Register="3017" Alu="155" Lut="6003" MULT27X36="2" Bsram="64" T_Register="3017(3017)" T_Alu="155(155)" T_Lut="6003(6003)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
- <SubModule name="ws_drv" Register="26" Lut="71" T_Register="26(26)" T_Lut="71(71)"/>
+ <SubModule name="ws_drv" Register="51" Lut="133" T_Register="51(51)" T_Lut="133(133)"/>
 </Module>

@@ -12,27 +12,27 @@
   <Part Number>: GW5AT-LV60PG484AC2/I1
   <Device>: GW5AT-60
   <Device Version>: B
-  <Created Time>:Sat Feb 14 19:22:59 2026
+  <Created Time>:Sat Feb 14 20:05:27 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.672s, Elapsed time = 0h 0m 0.67s
-    Placement Phase 1: CPU time = 0h 0m 0.526s, Elapsed time = 0h 0m 0.521s
+    Placement Phase 0: CPU time = 0h 0m 0.695s, Elapsed time = 0h 0m 0.691s
+    Placement Phase 1: CPU time = 0h 0m 0.522s, Elapsed time = 0h 0m 0.519s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Placement Phase 3: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Total Placement: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0.003s, Elapsed time = 0h 0m 0.003s
-    Routing Phase 1: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
-    Routing Phase 2: CPU time = 0h 0m 0.121s, Elapsed time = 0h 0m 0.116s
+    Routing Phase 1: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
+    Routing Phase 2: CPU time = 0h 0m 0.124s, Elapsed time = 0h 0m 0.119s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
+    Total Routing: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
  Generate output files:
     CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 5856MB
+ Total Time and Memory Usage: CPU time = 0h 0m 23s, Elapsed time = 0h 0m 23s, Peak memory usage = 5856MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 6276/59904                          |  11%
-    --LUT,ALU,ROM16           | 6276(6106 LUT, 170 ALU, 0 ROM16)    | -
+  Logic                       | 6330/59904                          |  11%
+    --LUT,ALU,ROM16           | 6330(6159 LUT, 171 ALU, 0 ROM16)    | -
     --SSRAM(RAM16)            | 0                                   | -
-  Register                    | 3073/60780                          |  6%
+  Register                    | 3094/60780                          |  6%
     --Logic Register as Latch | 0/59904                             |  0%
-    --Logic Register as FF    | 3053/59904                          |  6%
+    --Logic Register as FF    | 3074/59904                          |  6%
     --I/O Register as Latch   | 0/876                               |  0%
     --I/O Register as FF      | 20/876                              |  3%
-  CLS                         | 4574/29952                          |  16%
+  CLS                         | 4595/29952                          |  16%
   I/O Port                    | 26/297                              |  9%
   I/O Buf                     | 26                                  | -
     --Input Buf               | 4                                   | -
@@ -88,7 +88,7 @@
   Clock Resource| Usage         | Utilization 
   ------------------------------------------
   PRIMARY       | 2/8           | 25%
-  LW            | 5/8           | 63%
+  LW            | 6/8           | 75%
   GCLK_PIN      | 0/40          | 0%
   ==========================================
 
@@ -99,7 +99,8 @@
   Signal         | Global Clock   | Location
   -------------------------------------------
   gowin_add_ibuf_net_HCLK| PRIMARY        |  PTR0 PTR1 PTR2 PTR3 PBR0 PBR1 PBR2
-  Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PBR1 PBR2
+  Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PTR1 PBR2
+  gowin_add_ibuf_net_hwRstn| LW             |  -
   Cortex_M1_instance/dbgRstGen| LW             |  -
   Cortex_M1_instance/sysRstGen[3]| LW             |  -
   Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/biu_rdy| LW             |  -
