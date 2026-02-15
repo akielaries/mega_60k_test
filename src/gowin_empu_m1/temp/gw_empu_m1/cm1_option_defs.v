@@ -9,5 +9,5 @@
 `define CM1_ITCM_UA_EN 0
 `define CM1_ITCMSIZE 4'b0111
 `define CM1_ITCM_INIT_EN
-`define CM1_ITCM_INIT_PATH "/home/akiel/trunk/pub/mega_60k_test/itcm"
+`define CM1_ITCM_INIT_PATH "/home/akiel/trunk/pub/gowin_cortexm1_fw/itcm/boot"
 `define CM1_DTCMSIZE 4'b0111

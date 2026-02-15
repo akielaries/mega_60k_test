@@ -9,15 +9,15 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 12,
+    "InstLine" : 18,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-    "ModuleLine" : 39401,
+    "ModuleLine" : 41360,
     "ModuleName" : "Gowin_EMPU_M1_Top",
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 39565,
+      "InstLine" : 41542,
       "InstName" : "M1_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
       "ModuleLine" : 199,
@@ -25,13 +25,21 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 39663,
+      "InstLine" : 41657,
       "InstName" : "u_GowinCM1AhbExtWrapper",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "ModuleLine" : 35482,
+      "ModuleLine" : 35965,
       "ModuleName" : "GowinCM1AhbExtWrapper"
      }
     ]
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 58,
+    "InstName" : "ws_drv",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ws2812_driver"
    }
   ]
  }
