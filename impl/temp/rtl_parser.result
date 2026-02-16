@@ -78,41 +78,5 @@
     "ModuleName" : "ws2812_driver"
    }
   ]
- },
- {
-  "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
-  "InstLine" : 1,
-  "InstName" : "gpio",
-  "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
-  "ModuleLine" : 1,
-  "ModuleName" : "gpio",
-  "SubInsts" : [
-   {
-    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
-    "InstLine" : 36,
-    "InstName" : "gpio_bridge",
-    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-    "ModuleLine" : 1039,
-    "ModuleName" : "AHB_to_APB_32_Bridge_Top",
-    "SubInsts" : [
-     {
-      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-      "InstLine" : 1088,
-      "InstName" : "u_AHB_to_APB_32_bridge",
-      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-      "ModuleLine" : 11,
-      "ModuleName" : "~AHB_to_APB_32_bridge.AHB_to_APB_32_Bridge_Top"
-     }
-    ]
-   },
-   {
-    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
-    "InstLine" : 70,
-    "InstName" : "u_gpio_regs",
-    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
-    "ModuleLine" : 7,
-    "ModuleName" : "gpio_regs"
-   }
-  ]
  }
 ]

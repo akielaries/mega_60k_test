@@ -93,21 +93,6 @@ module top (
         .HRESP(AHB1HRESP)
     );
 
-    gpio gpio_inst (
-        .HCLK(AHB1HCLK),
-        .HRESET(AHB1HRESET),
-
-        .HADDR(AHB1HADDR),
-        .HWDATA(AHB1HWDATA),
-        .HWRITE(AHB1HWRITE),
-        .HTRANS(AHB1HTRANS),
-        .HSEL(AHB1HSEL),
-
-        .HRDATA(AHB1HRDATA),
-        .HREADYOUT(AHB1HREADYOUT),
-        .HRESP(AHB1HRESP)
-    );
-
     // ------------------------------------------------------------
     // 0.5 second counter (unchanged) – drives BOOT_LED
     // ------------------------------------------------------------

@@ -24,14 +24,6 @@
   {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
    "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
-   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

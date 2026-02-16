@@ -7,8 +7,7 @@
     <FileList>
         <File path="src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
-        <File path="src/gpio.v" type="file.verilog" enable="1"/>
-        <File path="src/gpio_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/gpio_regs.v" type="file.verilog" enable="0"/>
         <File path="src/sysinfo.v" type="file.verilog" enable="1"/>
         <File path="src/sysinfo_regs.v" type="file.verilog" enable="1"/>
         <File path="src/top.v" type="file.verilog" enable="1"/>
