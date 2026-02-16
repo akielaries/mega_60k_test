@@ -12,26 +12,33 @@ module top (
     output WS2812_LED
 );
 
-    // ------------------------------------------------------------
-    // AHB1 wires
-    // ------------------------------------------------------------
-    wire [31:0] AHB1HRDATA;
-    wire        AHB1HREADYOUT;
-    wire [1:0]  AHB1HRESP;
+    // -----------------------------
+    // AHB1 slave/master interface
+    // -----------------------------
 
-    wire [1:0]  AHB1HTRANS;
-    wire [2:0]  AHB1HBURST;
-    wire [3:0]  AHB1HPROT;
-    wire [2:0]  AHB1HSIZE;
-    wire        AHB1HWRITE;
-    wire        AHB1HREADYMUX;
-    wire [3:0]  AHB1HMASTER;
-    wire        AHB1HMASTLOCK;
-    wire [31:0] AHB1HADDR;
-    wire [31:0] AHB1HWDATA;
-    wire        AHB1HSEL;
-    wire        AHB1HCLK;
-    wire        AHB1HRESET;
+    // --- Read interface (from slave to master) ---
+    wire [31:0] AHB1HRDATA;     // Read data bus: data returned from the slave to the master
+    wire        AHB1HREADYOUT;  // Ready signal: indicates slave can accept next transfer or has valid data
+    wire [1:0]  AHB1HRESP;      // Response code from slave: 00=OKAY, 01=ERROR, etc.
+
+    // --- Control signals (from master to slave) ---
+    wire [1:0]  AHB1HTRANS;     // Transfer type: indicates if the current transfer is IDLE, BUSY, NONSEQ, SEQ
+    wire [2:0]  AHB1HBURST;     // Burst type: single, incrementing, or wrapping burst transfers
+    wire [3:0]  AHB1HPROT;      // Protection control: privilege, bufferable, cacheable, etc.
+    wire [2:0]  AHB1HSIZE;      // Transfer size: width of the transfer (byte=0, halfword=1, word=2, etc.)
+    wire        AHB1HWRITE;     // Direction of transfer: 1=write, 0=read
+    wire        AHB1HREADYMUX;  // Ready mux output: used internally in the core for pipeline alignment
+    wire [3:0]  AHB1HMASTER;    // Master ID: identifies which master is driving the current transfer (if multiple masters)
+    wire        AHB1HMASTLOCK;  // Locked transfer: indicates exclusive/locked transfer sequence
+
+    // --- Address/data buses ---
+    wire [31:0] AHB1HADDR;      // Address bus: 32-bit address of the current transfer
+    wire [31:0] AHB1HWDATA;     // Write data bus: 32-bit data being written from master to slave
+
+    // --- Slave select / clock / reset ---
+    wire        AHB1HSEL;       // Slave select: active when this slave is addressed
+    wire        AHB1HCLK;       // AHB clock: synchronizes all transfers
+    wire        AHB1HRESET;     // AHB reset: resets bus and slaves
 
     // ------------------------------------------------------------
     // Cortex-M1 instantiation
@@ -69,9 +76,24 @@ module top (
     );
 
     // ------------------------------------------------------------
-    // Advanced High-Performance Bus (AHB) instantiation
+    // Advanced High-Performance Bus (AHB) instantiation (s)
     // ------------------------------------------------------------
-    ahb_dummy ahb_test (
+    system_info sysinfo_inst (
+        .HCLK(AHB1HCLK),
+        .HRESET(AHB1HRESET),
+
+        .HADDR(AHB1HADDR),
+        .HWDATA(AHB1HWDATA),
+        .HWRITE(AHB1HWRITE),
+        .HTRANS(AHB1HTRANS),
+        .HSEL(AHB1HSEL),
+
+        .HRDATA(AHB1HRDATA),
+        .HREADYOUT(AHB1HREADYOUT),
+        .HRESP(AHB1HRESP)
+    );
+
+    gpio gpio_inst (
         .HCLK(AHB1HCLK),
         .HRESET(AHB1HRESET),
 

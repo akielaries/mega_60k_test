@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="26" Lut="46" T_Register="3092(26)" T_Alu="155(0)" T_Lut="6270(46)" T_MULT27X36="2(0)" T_Bsram="64(0)">
- <SubModule name="Cortex_M1_instance" Register="3015" Alu="155" Lut="6095" MULT27X36="2" Bsram="64" T_Register="3015(3015)" T_Alu="155(155)" T_Lut="6095(6095)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
- <SubModule name="ws_drv" Register="51" Lut="129" T_Register="51(51)" T_Lut="129(129)"/>
+<Module name="top" Register="26" Lut="41" T_Register="3163(26)" T_Alu="155(0)" T_Lut="6404(41)" T_MULT27X36="2(0)" T_Bsram="64(0)">
+ <SubModule name="Cortex_M1_instance" Register="3019" Alu="155" Lut="6136" MULT27X36="2" Bsram="64" T_Register="3019(3019)" T_Alu="155(155)" T_Lut="6136(6136)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
+ <SubModule name="sysinfo_inst" Lut="10" T_Register="67(0)" T_Lut="93(10)">
+  <SubModule name="sysinfo_bridge" Register="57" Lut="74" T_Register="57(57)" T_Lut="74(74)"/>
+  <SubModule name="u_regs" Register="10" Lut="9" T_Register="10(10)" T_Lut="9(9)"/>
+ </SubModule>
+ <SubModule name="ws_drv" Register="51" Lut="134" T_Register="51(51)" T_Lut="134(134)"/>
 </Module>
