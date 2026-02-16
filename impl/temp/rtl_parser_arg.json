@@ -18,11 +18,19 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
    "Type" : "verilog"
   }
  ],

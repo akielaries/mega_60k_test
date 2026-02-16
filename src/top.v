@@ -11,11 +11,10 @@ module top (
     inout BOOT_LED_A,
     output WS2812_LED
 );
-
     // -----------------------------
     // AHB1 slave/master interface
     // -----------------------------
-
+/*
     // --- Read interface (from slave to master) ---
     wire [31:0] AHB1HRDATA;     // Read data bus: data returned from the slave to the master
     wire        AHB1HREADYOUT;  // Ready signal: indicates slave can accept next transfer or has valid data
@@ -39,6 +38,20 @@ module top (
     wire        AHB1HSEL;       // Slave select: active when this slave is addressed
     wire        AHB1HCLK;       // AHB clock: synchronizes all transfers
     wire        AHB1HRESET;     // AHB reset: resets bus and slaves
+*/
+
+    wire [31:0] APB1PADDR;
+    wire        APB1PENABLE;
+    wire        APB1PWRITE;
+    wire [3:0]  APB1PSTRB;
+    wire [2:0]  APB1PPROT;
+    wire [31:0] APB1PWDATA;
+    wire [31:0] APB1PRDATA;
+    wire        APB1PREADY;
+    wire        APB1PSLVERR;
+    wire        APB1PCLK;
+    wire        APB1PRESET;
+    wire        APB1PSEL;
 
     // ------------------------------------------------------------
     // Cortex-M1 instantiation
@@ -52,24 +65,19 @@ module top (
         .UART1RXD(UART1RXD),
         .UART1TXD(UART1TXD),
 
-        // AHB1 interface
-        .AHB1HRDATA(AHB1HRDATA),
-        .AHB1HREADYOUT(AHB1HREADYOUT),
-        .AHB1HRESP(AHB1HRESP),
-        .AHB1HTRANS(AHB1HTRANS),
-        .AHB1HBURST(AHB1HBURST),
-        .AHB1HPROT(AHB1HPROT),
-        .AHB1HSIZE(AHB1HSIZE),
-        .AHB1HWRITE(AHB1HWRITE),
-        .AHB1HREADYMUX(AHB1HREADYMUX),
-        .AHB1HMASTER(AHB1HMASTER),
-        .AHB1HMASTLOCK(AHB1HMASTLOCK),
-        .AHB1HADDR(AHB1HADDR),
-        .AHB1HWDATA(AHB1HWDATA),
-        .AHB1HSEL(AHB1HSEL),
-        .AHB1HCLK(AHB1HCLK),
-        .AHB1HRESET(AHB1HRESET),
-        
+        // APB1 interface
+        .APB1PADDR(APB1PADDR),
+        .APB1PENABLE(APB1PENABLE),
+        .APB1PWRITE(APB1PWRITE),
+        .APB1PSTRB(APB1PSTRB),
+        .APB1PPROT(APB1PPROT),
+        .APB1PWDATA(APB1PWDATA),
+        .APB1PRDATA(APB1PRDATA),
+        .APB1PREADY(APB1PREADY),
+        .APB1PSLVERR(APB1PSLVERR),
+        .APB1PCLK(APB1PCLK),
+        .APB1PRESET(APB1PRESET),
+        .APB1PSEL(APB1PSEL),        
 
         .HCLK(HCLK),
         .hwRstn(hwRstn)
@@ -78,19 +86,20 @@ module top (
     // ------------------------------------------------------------
     // Advanced High-Performance Bus (AHB) instantiation (s)
     // ------------------------------------------------------------
-    system_info sysinfo_inst (
-        .HCLK(AHB1HCLK),
-        .HRESET(AHB1HRESET),
+ 
+    apb_memmap apb_memmap_inst (
+        .APBCLK   (APB1PCLK),
+        .APBRESET (APB1PRESET),
 
-        .HADDR(AHB1HADDR),
-        .HWDATA(AHB1HWDATA),
-        .HWRITE(AHB1HWRITE),
-        .HTRANS(AHB1HTRANS),
-        .HSEL(AHB1HSEL),
+        .PADDR    (APB1PADDR),
+        .PSEL     (APB1PSEL),
+        .PENABLE  (APB1PENABLE),
+        .PWRITE   (APB1PWRITE),
+        .PWDATA   (APB1PWDATA),
 
-        .HRDATA(AHB1HRDATA),
-        .HREADYOUT(AHB1HREADYOUT),
-        .HRESP(AHB1HRESP)
+        .PRDATA   (APB1PRDATA),
+        .PREADY   (APB1PREADY),
+        .PSLVERR  (APB1PSLVERR)
     );
 
     // ------------------------------------------------------------

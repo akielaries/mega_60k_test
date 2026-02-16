@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="26" Lut="41" T_Register="3163(26)" T_Alu="155(0)" T_Lut="6404(41)" T_MULT27X36="2(0)" T_Bsram="64(0)">
- <SubModule name="Cortex_M1_instance" Register="3019" Alu="155" Lut="6136" MULT27X36="2" Bsram="64" T_Register="3019(3019)" T_Alu="155(155)" T_Lut="6136(6136)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
- <SubModule name="sysinfo_inst" Lut="10" T_Register="67(0)" T_Lut="93(10)">
-  <SubModule name="sysinfo_bridge" Register="57" Lut="74" T_Register="57(57)" T_Lut="74(74)"/>
-  <SubModule name="u_regs" Register="10" Lut="9" T_Register="10(10)" T_Lut="9(9)"/>
+<Module name="top" Register="26" Lut="43" T_Register="3268(26)" T_Alu="155(0)" T_Lut="6471(43)" T_MULT27X36="2(0)" T_Bsram="64(0)">
+ <SubModule name="Cortex_M1_instance" Register="3080" Alu="155" Lut="6204" MULT27X36="2" Bsram="64" T_Register="3080(3080)" T_Alu="155(155)" T_Lut="6204(6204)" T_MULT27X36="2(2)" T_Bsram="64(64)"/>
+ <SubModule name="apb_memmap_inst" Lut="41" T_Register="111(0)" T_Lut="91(41)">
+  <SubModule name="sysinfo_inst" T_Register="12(0)" T_Lut="14(0)">
+   <SubModule name="u_regs" Register="12" Lut="14" T_Register="12(12)" T_Lut="14(14)"/>
+  </SubModule>
+  <SubModule name="gpio_inst" T_Register="99(0)" T_Lut="36(0)">
+   <SubModule name="u_regs" Register="99" Lut="36" T_Register="99(99)" T_Lut="36(36)"/>
+  </SubModule>
  </SubModule>
- <SubModule name="ws_drv" Register="51" Lut="134" T_Register="51(51)" T_Lut="134(134)"/>
+ <SubModule name="ws_drv" Register="51" Lut="133" T_Register="51(51)" T_Lut="133(133)"/>
 </Module>

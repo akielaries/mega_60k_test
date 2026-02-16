@@ -9,15 +9,15 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 46,
+    "InstLine" : 59,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-    "ModuleLine" : 41888,
+    "ModuleLine" : 41982,
     "ModuleName" : "Gowin_EMPU_M1_Top",
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 42593,
+      "InstLine" : 42627,
       "InstName" : "M1_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
       "ModuleLine" : 199,
@@ -25,53 +25,63 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 42729,
+      "InstLine" : 42697,
       "InstName" : "u_GowinCM1AhbExtWrapper",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "ModuleLine" : 36244,
+      "ModuleLine" : 36195,
       "ModuleName" : "GowinCM1AhbExtWrapper"
      }
     ]
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 81,
-    "InstName" : "sysinfo_inst",
-    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
+    "InstLine" : 90,
+    "InstName" : "apb_memmap_inst",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
-    "ModuleName" : "system_info",
+    "ModuleName" : "apb_memmap",
     "SubInsts" : [
      {
-      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
-      "InstLine" : 45,
-      "InstName" : "sysinfo_bridge",
-      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-      "ModuleLine" : 1039,
-      "ModuleName" : "AHB_to_APB_32_Bridge_Top",
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
+      "InstLine" : 26,
+      "InstName" : "sysinfo_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "system_info",
       "SubInsts" : [
        {
-        "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-        "InstLine" : 1088,
-        "InstName" : "u_AHB_to_APB_32_bridge",
-        "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v",
-        "ModuleLine" : 11,
-        "ModuleName" : "~AHB_to_APB_32_bridge.AHB_to_APB_32_Bridge_Top"
+        "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
+        "InstLine" : 17,
+        "InstName" : "u_regs",
+        "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
+        "ModuleLine" : 7,
+        "ModuleName" : "sysinfo_regs"
        }
       ]
      },
      {
-      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
-      "InstLine" : 82,
-      "InstName" : "u_regs",
-      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
-      "ModuleLine" : 7,
-      "ModuleName" : "sysinfo_regs"
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
+      "InstLine" : 42,
+      "InstName" : "gpio_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "gpio",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
+        "InstLine" : 22,
+        "InstName" : "u_regs",
+        "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
+        "ModuleLine" : 7,
+        "ModuleName" : "gpio_regs"
+       }
+      ]
      }
     ]
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 120,
+    "InstLine" : 129,
     "InstName" : "ws_drv",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
     "ModuleLine" : 1,
