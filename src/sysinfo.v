@@ -10,14 +10,14 @@ module system_info (
     output        PREADY,
     output [1:0]  PSLVERR
 );
-    // Cheby-generated regs instance (unchanged)
+    // Cheby-generated regs instance
     wire [31:0] prdata_cheby;
     wire        pready_cheby;
 
     sysinfo_regs u_regs (
         .pclk(APBCLK),
         .presetn(APBRESET),
-        .paddr(PADDR[3:2]),   // word addressing
+        .paddr(PADDR[4:2]),   // word addressing
         .psel(PSEL),
         .pwrite(PWRITE),
         .penable(PENABLE),
@@ -27,13 +27,17 @@ module system_info (
         .prdata(prdata_cheby),
         .pslverr(),
 
-        // Register values
+        // register values
         .magic_i(32'hDEADBEEF),
         .mfg_code_A_i(32'h476F7769),
         .mfg_code_B_i(32'h6E36304B),
-        .version_patch_i(8'd3),
-        .version_minor_i(8'd2),
-        .version_major_i(16'd1)
+        .version_patch_i(8'd0),
+        .version_minor_i(8'd0),
+        .version_major_i(16'd1),
+        // cheby version stuff
+        .cheby_version_patch_i(8'd0),
+        .cheby_version_minor_i(8'd7),
+        .cheby_version_major_i(16'd1)
     );
 
     assign PRDATA  = prdata_cheby;

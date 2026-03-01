@@ -1,23 +1,49 @@
 [
  {
   "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-  "InstLine" : 1,
+  "InstLine" : 17,
   "InstName" : "top",
   "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-  "ModuleLine" : 1,
+  "ModuleLine" : 17,
   "ModuleName" : "top",
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 59,
+    "InstLine" : 115,
+    "InstName" : "u_Gowin_PLL",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "Gowin_PLL",
+    "SubInsts" : [
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
+      "InstLine" : 35,
+      "InstName" : "u_pll",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll_mod.v",
+      "ModuleLine" : 11,
+      "ModuleName" : "Gowin_PLL_MOD"
+     },
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
+      "InstLine" : 49,
+      "InstName" : "u_pll_init",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/pll_init.v",
+      "ModuleLine" : 4,
+      "ModuleName" : "PLL_INIT"
+     }
+    ]
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 136,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-    "ModuleLine" : 41982,
+    "ModuleLine" : 62340,
     "ModuleName" : "Gowin_EMPU_M1_Top",
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 42627,
+      "InstLine" : 63085,
       "InstName" : "M1_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
       "ModuleLine" : 199,
@@ -25,17 +51,51 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 42697,
+      "InstLine" : 63194,
       "InstName" : "u_GowinCM1AhbExtWrapper",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "ModuleLine" : 36195,
+      "ModuleLine" : 37119,
       "ModuleName" : "GowinCM1AhbExtWrapper"
      }
     ]
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 90,
+    "InstLine" : 209,
+    "InstName" : "gwct_inst",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
+    "ModuleLine" : 57,
+    "ModuleName" : "gwct_debug_bridge_n",
+    "SubInsts" : [
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
+      "InstLine" : 124,
+      "InstName" : "uart_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_uart.v",
+      "ModuleLine" : 17,
+      "ModuleName" : "gwct_uart"
+     },
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
+      "InstLine" : 136,
+      "InstName" : "packet_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_packet.v",
+      "ModuleLine" : 18,
+      "ModuleName" : "gwct_packet"
+     },
+     {
+      "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
+      "InstLine" : 220,
+      "InstName" : "apb_master_inst",
+      "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_apb_master.v",
+      "ModuleLine" : 13,
+      "ModuleName" : "gwct_apb_master"
+     }
+    ]
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 252,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -43,7 +103,7 @@
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
-      "InstLine" : 26,
+      "InstLine" : 34,
       "InstName" : "sysinfo_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
       "ModuleLine" : 1,
@@ -61,7 +121,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
-      "InstLine" : 42,
+      "InstLine" : 50,
       "InstName" : "gpio_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
       "ModuleLine" : 1,
@@ -81,7 +141,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 129,
+    "InstLine" : 267,
     "InstName" : "ws_drv",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
     "ModuleLine" : 1,

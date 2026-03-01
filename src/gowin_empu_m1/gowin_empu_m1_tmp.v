@@ -6,7 +6,7 @@
 //Part Number: GW5AT-LV60PG484AC2/I1
 //Device: GW5AT-60
 //Device Version: B
-//Created Time: Sun Feb 15 20:43:41 2026
+//Created Time: Fri Feb 27 21:49:10 2026
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
@@ -31,6 +31,27 @@
 		.APB1PSLVERR(APB1PSLVERR), //input APB1PSLVERR
 		.APB1PCLK(APB1PCLK), //output APB1PCLK
 		.APB1PRESET(APB1PRESET), //output APB1PRESET
+		.DDR_CLK_I(DDR_CLK_I), //input DDR_CLK_I
+		.DDR_STOP_O(DDR_STOP_O), //output DDR_STOP_O
+		.DDR_MEM_CLK_I(DDR_MEM_CLK_I), //input DDR_MEM_CLK_I
+		.DDR_LOCK_I(DDR_LOCK_I), //input DDR_LOCK_I
+		.DDR_RSTN_I(DDR_RSTN_I), //input DDR_RSTN_I
+		.DDR_INIT_COMPLETE_O(DDR_INIT_COMPLETE_O), //output DDR_INIT_COMPLETE_O
+		.DDR_ADDR_O(DDR_ADDR_O), //output [13:0] DDR_ADDR_O
+		.DDR_BA_O(DDR_BA_O), //output [2:0] DDR_BA_O
+		.DDR_CS_N_O(DDR_CS_N_O), //output DDR_CS_N_O
+		.DDR_RAS_N_O(DDR_RAS_N_O), //output DDR_RAS_N_O
+		.DDR_CAS_N_O(DDR_CAS_N_O), //output DDR_CAS_N_O
+		.DDR_WE_N_O(DDR_WE_N_O), //output DDR_WE_N_O
+		.DDR_CLK_O(DDR_CLK_O), //output DDR_CLK_O
+		.DDR_CLK_N_O(DDR_CLK_N_O), //output DDR_CLK_N_O
+		.DDR_CKE_O(DDR_CKE_O), //output DDR_CKE_O
+		.DDR_ODT_O(DDR_ODT_O), //output DDR_ODT_O
+		.DDR_RESET_N_O(DDR_RESET_N_O), //output DDR_RESET_N_O
+		.DDR_DQM_O(DDR_DQM_O), //output [1:0] DDR_DQM_O
+		.DDR_DQ_IO(DDR_DQ_IO), //inout [15:0] DDR_DQ_IO
+		.DDR_DQS_IO(DDR_DQS_IO), //inout [1:0] DDR_DQS_IO
+		.DDR_DQS_N_IO(DDR_DQS_N_IO), //inout [1:0] DDR_DQS_N_IO
 		.HCLK(HCLK), //input HCLK
 		.hwRstn(hwRstn) //input hwRstn
 	);

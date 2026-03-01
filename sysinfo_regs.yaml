@@ -36,3 +36,21 @@ memory-map:
               name: major
               description: Major version
               range: 31-16
+    - reg:
+        name: cheby_version
+        description: Cheby Version (Major.Minor.Patch)
+        width: 32
+        access: ro
+        children:
+          - field:
+              name: patch
+              description: Patch version
+              range: 7-0
+          - field:
+              name: minor
+              description: Minor version
+              range: 15-8
+          - field:
+              name: major
+              description: Major version
+              range: 31-16

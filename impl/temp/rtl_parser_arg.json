@@ -2,11 +2,55 @@
  "Device" : "GW5AT-60B",
  "Files" : [
   {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
    "Type" : "verilog"
   },
   {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll_mod.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_apb_master.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_packet.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_uart.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/pll_init.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
    "Type" : "verilog"
   },
   {
@@ -15,22 +59,6 @@
   },
   {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gpio.v",
    "Type" : "verilog"
   }
  ],

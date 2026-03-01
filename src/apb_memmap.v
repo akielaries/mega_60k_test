@@ -11,18 +11,26 @@ module apb_memmap (
     output       PSLVERR
 );
 
-    // Sub-block wires
+    // i have no idea how to make this cleaner but these are the offsets
+    // of the peripherals of the APB1 section starting @ 0x6000_0000
+    localparam SYSINFO_BASE = 20'h00000;
+    localparam SYSINFO_SIZE = 20'h00014;
+
+    localparam GPIO_BASE    = 20'h00020;
+    localparam GPIO_SIZE    = 20'h00008;
+
+
+    // sub-block wires
     wire [31:0] sysinfo_prdata;
     wire        sysinfo_pready;
     wire [31:0] gpio_prdata;
     wire        gpio_pready;
 
-    // Decode hits
-    wire sysinfo_sel = (PADDR[19:0] < 20'h10);
-    wire gpio_sel    = (PADDR[19:0] >= 20'h10 &&
-                        PADDR[19:0] < 20'h20);
-
-    // Instantiate sub-blocks
+    // decode address hits
+    wire sysinfo_sel = PSEL && (PADDR[19:0] < 20'h14);
+    wire gpio_sel    = PSEL && (PADDR[19:0] >= 20'h20 && PADDR[19:0] < 20'h30);
+    
+    // instantiate sub-blocks
     system_info sysinfo_inst (
         .APBCLK(APBCLK),
         .APBRESET(APBRESET),
@@ -68,7 +76,7 @@ module apb_memmap (
         gpio_sel    ? gpio_pready :
                       1'b1;
 
-    assign PSLVERR =
-        (PSEL && !(sysinfo_sel || gpio_sel));
+    //assign PSLVERR = (PSEL && !(sysinfo_sel || gpio_sel));
+    assign PSLVERR = 1'b0;
 
 endmodule
