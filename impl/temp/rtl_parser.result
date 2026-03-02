@@ -1,15 +1,15 @@
 [
  {
   "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-  "InstLine" : 17,
+  "InstLine" : 15,
   "InstName" : "top",
   "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-  "ModuleLine" : 17,
+  "ModuleLine" : 15,
   "ModuleName" : "top",
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 136,
+    "InstLine" : 120,
     "InstName" : "u_Gowin_PLL",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 1,
@@ -35,7 +35,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 157,
+    "InstLine" : 140,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
     "ModuleLine" : 63173,
@@ -61,15 +61,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 235,
-    "InstName" : "ahb_ram_inst",
-    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v",
-    "ModuleLine" : 2,
-    "ModuleName" : "ahb_sram"
-   },
-   {
-    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 278,
+    "InstLine" : 228,
     "InstName" : "gwct_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
     "ModuleLine" : 57,
@@ -103,7 +95,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 321,
+    "InstLine" : 283,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -149,20 +141,28 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 336,
+    "InstLine" : 313,
+    "InstName" : "apb2ahb_inst",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
+    "ModuleLine" : 24,
+    "ModuleName" : "apb2ahb_bridge"
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 379,
+    "InstName" : "ahb_ram_inst",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "ahb_sram"
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 406,
     "InstName" : "ws_drv",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
     "ModuleLine" : 1,
     "ModuleName" : "ws2812_driver"
    }
   ]
- },
- {
-  "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
-  "InstLine" : 24,
-  "InstName" : "apb2ahb_bridge",
-  "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
-  "ModuleLine" : 24,
-  "ModuleName" : "apb2ahb_bridge"
  }
 ]

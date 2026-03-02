@@ -1,18 +1,16 @@
 // =============================================================================
-// top.v — Gowin EMPU Cortex-M1 + GWCT debug module
+// top.v — Gowin EMPU Cortex-M1 + GWCT debug module (EXTENSIBLE VERSION)
 //
-// GWCT (Gowin Watch & Control Tool) is a UART-based debug master that can
-// read and write APB-mapped registers independently of the Cortex-M1.
+// Clean architecture that supports:
+//   - APB peripherals @ 0x6000_0000 (via apb_memmap)
+//   - AHB peripherals @ 0x8000_0000 (via apb2ahb bridge)
+//   - Easy to add more buses in the future
 //
-// APB bus arbitration (simple priority mux):
-//   - GWCT has priority when it has an active transaction (gwct_apb_sel=1)
-//   - Cortex-M1 APB bridge gets the bus otherwise
+// GWCT has 2 buses:
+//   Bus 0 (0x6xxx_xxxx): APB peripherals - shared with Cortex-M1
+//   Bus 1 (0x8xxx_xxxx): AHB SRAM - shared with Cortex-M1 via bridge
 //
-// This means: if GWCT is active, the Cortex-M1 cannot access APB until
-// GWCT finishes its single transaction (~4-5 APB cycles). This is fine
-// for debug purposes.
 // =============================================================================
-
 
 module top (
     input HCLK,
@@ -46,8 +44,9 @@ module top (
     inout [1:0] DDR_DQS_IO,
     inout [1:0] DDR_DQS_N_IO
 );
+
     // =========================================================================
-    // 0.5 second counter at 50mhz drives BOOT_LED
+    // Boot LED blinker
     // =========================================================================
     reg [24:0] counter;
     reg gpio1_out;
@@ -69,13 +68,12 @@ module top (
     assign BOOT_LED_A = gpio1_out;
 
     // =========================================================================
-    // APB1 wires from Cortex-M1 APB bridge
+    // Cortex-M1 APB1 interface
     // =========================================================================
     wire [31:0] APB1PADDR;
     wire        APB1PENABLE;
     wire        APB1PWRITE;
     wire [3:0]  APB1PSTRB;
-    wire [2:0]  APB1PPROT;
     wire [31:0] APB1PWDATA;
     wire [31:0] APB1PRDATA;
     wire        APB1PREADY;
@@ -85,76 +83,61 @@ module top (
     wire        APB1PSEL;
 
     // =========================================================================
-    // AHB1 wires from Cortex-M1 APB bridge
+    // Cortex-M1 AHB1 interface
     // =========================================================================
-    wire [31:0] AHB1HRDATA; //input [31:0] AHB1HRDATA
-    wire AHB1HREADYOUT; //input AHB1HREADYOUT
-	wire [1:0] AHB1HRESP; //input [1:0] AHB1HRESP
-	wire [1:0] AHB1HTRANS; //output [1:0] AHB1HTRANS
-	wire [2:0] AHB1HBURST; //output [2:0] AHB1HBURST
-	wire [3:0] AHB1HPROT; //output [3:0] AHB1HPROT
-	wire [2:0] AHB1HSIZE; //output [2:0] AHB1HSIZE
-	wire AHB1HWRITE; //output AHB1HWRITE
-	wire AHB1HREADYMUX; //output AHB1HREADYMUX
-	wire [3:0] AHB1HMASTER; //output [3:0] AHB1HMASTER
-	wire AHB1HMASTLOCK; //output AHB1HMASTLOCK
-	wire [31:0] AHB1HADDR; //output [31:0] AHB1HADDR
-    wire [31:0] AHB1HWDATA; //output [31:0] AHB1HWDATA
-    wire AHB1HSEL; //output AHB1HSEL
-	wire AHB1HCLK; //output AHB1HCLK
-    wire AHB1HRESET; //output AHB1HRESET
+    wire [31:0] AHB1HRDATA;
+    wire        AHB1HREADYOUT;
+    wire [1:0]  AHB1HRESP;
+    wire [1:0]  AHB1HTRANS;
+    wire [2:0]  AHB1HBURST;
+    wire [3:0]  AHB1HPROT;
+    wire [2:0]  AHB1HSIZE;
+    wire        AHB1HWRITE;
+    wire        AHB1HREADYMUX;
+    wire [3:0]  AHB1HMASTER;
+    wire        AHB1HMASTLOCK;
+    wire [31:0] AHB1HADDR;
+    wire [31:0] AHB1HWDATA;
+    wire        AHB1HSEL;
+    wire        AHB1HCLK;
+    wire        AHB1HRESET;
 
     // =========================================================================
-    // DDR3 configuration
+    // DDR3 PLL
     // =========================================================================
-
-    wire MCU_CLK;           //MCU input clock   50MHz
-    wire DDR_CLK;           //DDR3 input clock  50MHz
-    wire DDR_MEM_CLK;       //DDR3 memory clock 200MHz
-
-
+    wire MCU_CLK;
+    wire DDR_CLK;
+    wire DDR_MEM_CLK;
     wire pll_lock;
     reg  pll_lock_r;
     reg  pll_lock_rr;
-    wire mdrp_inc;
-    wire [1:0] mdrp_op;
-    wire [7:0] mdrp_wdata;
-    wire [7:0] mdrp_rdata;
 
-    assign mdrp_inc = 1'b0;
-    assign mdrp_op = 2'b0;
-    assign mdrp_wdata = 8'b0;
-
-
-    always@(posedge HCLK)
-    begin
-        pll_lock_r <= pll_lock;
+    always @(posedge HCLK) begin
+        pll_lock_r  <= pll_lock;
         pll_lock_rr <= pll_lock_r;
     end
 
-    //Gowin_PLL instantiation
-    Gowin_PLL u_Gowin_PLL
-    (
+    Gowin_PLL u_Gowin_PLL (
         .lock(pll_lock),
         .clkout0(),
         .clkout2(DDR_MEM_CLK),
-        .mdrdo(mdrp_rdata),
+        .mdrdo(),
         .clkin(HCLK),
         .reset(1'b0),
         .mdclk(HCLK),
-        .mdopc(mdrp_op),
-        .mdainc(mdrp_inc),
-        .mdwdi(mdrp_wdata),
+        .mdopc(2'b0),
+        .mdainc(1'b0),
+        .mdwdi(8'b0),
         .pll_init_bypass(1'b0)
     );
 
     assign MCU_CLK = HCLK;
     assign DDR_CLK = HCLK;
 
-    // ------------------------------------------------------------
+    // =========================================================================
     // Cortex-M1 instantiation
-    // ------------------------------------------------------------
-    Gowin_EMPU_M1_Top Cortex_M1_instance(
+    // =========================================================================
+    Gowin_EMPU_M1_Top Cortex_M1_instance (
         .LOCKUP(LOCKUP),
         .HALTED(HALTED),
         .GPIO(GPIO),
@@ -164,29 +147,28 @@ module top (
         .UART1TXD(UART1TXD),
             
         // AHB1 interface
-		.AHB1HRDATA(AHB1HRDATA), //input [31:0] AHB1HRDATA
-		.AHB1HREADYOUT(AHB1HREADYOUT), //input AHB1HREADYOUT
-		.AHB1HRESP(AHB1HRESP), //input [1:0] AHB1HRESP
-		.AHB1HTRANS(AHB1HTRANS), //output [1:0] AHB1HTRANS
-		.AHB1HBURST(AHB1HBURST), //output [2:0] AHB1HBURST
-		.AHB1HPROT(AHB1HPROT), //output [3:0] AHB1HPROT
-		.AHB1HSIZE(AHB1HSIZE), //output [2:0] AHB1HSIZE
-		.AHB1HWRITE(AHB1HWRITE), //output AHB1HWRITE
-		.AHB1HREADYMUX(AHB1HREADYMUX), //output AHB1HREADYMUX
-		.AHB1HMASTER(AHB1HMASTER), //output [3:0] AHB1HMASTER
-		.AHB1HMASTLOCK(AHB1HMASTLOCK), //output AHB1HMASTLOCK
-		.AHB1HADDR(AHB1HADDR), //output [31:0] AHB1HADDR
-		.AHB1HWDATA(AHB1HWDATA), //output [31:0] AHB1HWDATA
-		.AHB1HSEL(AHB1HSEL), //output AHB1HSEL
-		.AHB1HCLK(AHB1HCLK), //output AHB1HCLK
-		.AHB1HRESET(AHB1HRESET), //output AHB1HRESET
+        .AHB1HRDATA(AHB1HRDATA),
+        .AHB1HREADYOUT(AHB1HREADYOUT),
+        .AHB1HRESP(AHB1HRESP),
+        .AHB1HTRANS(AHB1HTRANS),
+        .AHB1HBURST(AHB1HBURST),
+        .AHB1HPROT(AHB1HPROT),
+        .AHB1HSIZE(AHB1HSIZE),
+        .AHB1HWRITE(AHB1HWRITE),
+        .AHB1HREADYMUX(AHB1HREADYMUX),
+        .AHB1HMASTER(AHB1HMASTER),
+        .AHB1HMASTLOCK(AHB1HMASTLOCK),
+        .AHB1HADDR(AHB1HADDR),
+        .AHB1HWDATA(AHB1HWDATA),
+        .AHB1HSEL(AHB1HSEL),
+        .AHB1HCLK(AHB1HCLK),
+        .AHB1HRESET(AHB1HRESET),
 
         // APB1 interface
         .APB1PADDR(APB1PADDR),
         .APB1PENABLE(APB1PENABLE),
         .APB1PWRITE(APB1PWRITE),
         .APB1PSTRB(APB1PSTRB),
-//        .APB1PPROT(APB1PPROT),
         .APB1PWDATA(APB1PWDATA),
         .APB1PRDATA(APB1PRDATA),
         .APB1PREADY(APB1PREADY),
@@ -195,7 +177,7 @@ module top (
         .APB1PRESET(APB1PRESET),
         .APB1PSEL(APB1PSEL),
 
-         // DDR3 connections
+        // DDR3 connections
         .DDR_INIT_COMPLETE_O(DDR_INIT_COMPLETE_O),
         .DDR_ADDR_O(DDR_ADDR_O),
         .DDR_BA_O(DDR_BA_O),
@@ -212,8 +194,6 @@ module top (
         .DDR_DQ_IO(DDR_DQ_IO),
         .DDR_DQS_IO(DDR_DQS_IO),
         .DDR_DQS_N_IO(DDR_DQS_N_IO),
-
-        // Clock connections
         .DDR_MEM_CLK_I(DDR_MEM_CLK),
         .DDR_CLK_I(DDR_CLK),
         .DDR_LOCK_I(pll_lock),
@@ -222,9 +202,173 @@ module top (
         .HCLK(HCLK),
         .hwRstn(hwRstn)
     );
+
     // =========================================================================
-    // AHB1 RAM (16 KB scratch at 0x8000_0000)
+    // GWCT debug bridge - 2 buses
     // =========================================================================
+    // Bus 0: APB peripherals (0x6xxx_xxxx)
+    // Bus 1: AHB SRAM        (0x8xxx_xxxx)
+    
+    wire [32*2-1:0] gwct_PADDR;
+    wire [2-1:0]    gwct_PSEL;
+    wire [2-1:0]    gwct_PENABLE;
+    wire [2-1:0]    gwct_PWRITE;
+    wire [32*2-1:0] gwct_PWDATA;
+    wire [4*2-1:0]  gwct_PSTRB;
+    wire [3*2-1:0]  gwct_PPROT;
+    wire [32*2-1:0] gwct_PRDATA;
+    wire [2-1:0]    gwct_PREADY;
+    wire [2-1:0]    gwct_PSLVERR;
+
+    gwct_debug_bridge_n #(
+        .CLK_HZ(50_000_000),
+        .BAUD(115_200),
+        .NUM_APB_BUSES(2),
+        .ADDR_BITS(28)
+    ) gwct_inst (
+        .clk     (HCLK),
+        .rstn    (hwRstn),
+        .uart_rx (GWCT_RX),
+        .uart_tx (GWCT_TX),
+        .PADDR   (gwct_PADDR),
+        .PSEL    (gwct_PSEL),
+        .PENABLE (gwct_PENABLE),
+        .PWRITE  (gwct_PWRITE),
+        .PWDATA  (gwct_PWDATA),
+        .PSTRB   (gwct_PSTRB),
+        .PPROT   (gwct_PPROT),
+        .PRDATA  (gwct_PRDATA),
+        .PREADY  (gwct_PREADY),
+        .PSLVERR (gwct_PSLVERR)
+    );
+
+    // Extract bus 0 signals (APB peripherals)
+    wire [31:0] gwct_apb_PADDR   = gwct_PADDR[31:0];
+    wire        gwct_apb_PSEL    = gwct_PSEL[0];
+    wire        gwct_apb_PENABLE = gwct_PENABLE[0];
+    wire        gwct_apb_PWRITE  = gwct_PWRITE[0];
+    wire [31:0] gwct_apb_PWDATA  = gwct_PWDATA[31:0];
+
+    // Extract bus 1 signals (AHB via bridge)
+    wire [31:0] gwct_ahb_PADDR   = gwct_PADDR[63:32];
+    wire        gwct_ahb_PSEL    = gwct_PSEL[1];
+    wire        gwct_ahb_PENABLE = gwct_PENABLE[1];
+    wire        gwct_ahb_PWRITE  = gwct_PWRITE[1];
+    wire [31:0] gwct_ahb_PWDATA  = gwct_PWDATA[63:32];
+    wire [3:0]  gwct_ahb_PSTRB   = gwct_PSTRB[7:4];
+
+    // =========================================================================
+    // Bus 0: APB peripherals (CPU + GWCT shared)
+    // =========================================================================
+    wire gwct_apb_active = gwct_apb_PSEL;
+
+    wire [31:0] apb_mux_PADDR   = gwct_apb_active ? gwct_apb_PADDR   : APB1PADDR;
+    wire        apb_mux_PSEL    = gwct_apb_active ? gwct_apb_PSEL    : APB1PSEL;
+    wire        apb_mux_PENABLE = gwct_apb_active ? gwct_apb_PENABLE : APB1PENABLE;
+    wire        apb_mux_PWRITE  = gwct_apb_active ? gwct_apb_PWRITE  : APB1PWRITE;
+    wire [31:0] apb_mux_PWDATA  = gwct_apb_active ? gwct_apb_PWDATA  : APB1PWDATA;
+
+    wire [31:0] apb_slave_PRDATA;
+    wire        apb_slave_PREADY;
+    wire        apb_slave_PSLVERR;
+
+    assign APB1PRDATA  = apb_slave_PRDATA;
+    assign APB1PREADY  = gwct_apb_active ? 1'b0 : apb_slave_PREADY;
+    assign APB1PSLVERR = apb_slave_PSLVERR;
+
+    assign gwct_PRDATA[31:0] = apb_slave_PRDATA;
+    assign gwct_PREADY[0]    = apb_slave_PREADY;
+    assign gwct_PSLVERR[0]   = apb_slave_PSLVERR;
+
+    apb_memmap apb_memmap_inst (
+        .APBCLK   (APB1PCLK),
+        .APBRESET (APB1PRESET),
+        .PADDR    (apb_mux_PADDR),
+        .PSEL     (apb_mux_PSEL),
+        .PENABLE  (apb_mux_PENABLE),
+        .PWRITE   (apb_mux_PWRITE),
+        .PWDATA   (apb_mux_PWDATA),
+        .PRDATA   (apb_slave_PRDATA),
+        .PREADY   (apb_slave_PREADY),
+        .PSLVERR  (apb_slave_PSLVERR)
+    );
+
+    // =========================================================================
+    // Bus 1: APB2AHB bridge (GWCT only, no CPU arbiter needed)
+    // =========================================================================
+    wire [31:0] bridge_HADDR;
+    wire        bridge_HWRITE;
+    wire [2:0]  bridge_HSIZE;
+    wire [1:0]  bridge_HTRANS;
+    wire [31:0] bridge_HWDATA;
+    wire        bridge_HSEL;
+    wire [31:0] bridge_HRDATA;
+    wire        bridge_HREADYOUT;
+    wire [1:0]  bridge_HRESP;
+
+    wire [31:0] ahb_bridge_PRDATA;
+    wire        ahb_bridge_PREADY;
+    wire        ahb_bridge_PSLVERR;
+
+    apb2ahb_bridge apb2ahb_inst (
+        .clk       (HCLK),
+        .rstn      (hwRstn),
+        
+        // APB side (from GWCT bus 1)
+        .PADDR     (gwct_ahb_PADDR),
+        .PSEL      (gwct_ahb_PSEL),
+        .PENABLE   (gwct_ahb_PENABLE),
+        .PWRITE    (gwct_ahb_PWRITE),
+        .PWDATA    (gwct_ahb_PWDATA),
+        .PSTRB     (gwct_ahb_PSTRB),
+        .PRDATA    (ahb_bridge_PRDATA),
+        .PREADY    (ahb_bridge_PREADY),
+        .PSLVERR   (ahb_bridge_PSLVERR),
+        
+        // AHB side (to arbiter)
+        .HADDR     (bridge_HADDR),
+        .HWRITE    (bridge_HWRITE),
+        .HSIZE     (bridge_HSIZE),
+        .HTRANS    (bridge_HTRANS),
+        .HWDATA    (bridge_HWDATA),
+        .HSEL      (bridge_HSEL),
+        .HRDATA    (bridge_HRDATA),
+        .HREADYOUT (bridge_HREADYOUT),
+        .HRESP     (bridge_HRESP)
+    );
+
+    assign gwct_PRDATA[63:32] = ahb_bridge_PRDATA;
+    assign gwct_PREADY[1]     = ahb_bridge_PREADY;
+    assign gwct_PSLVERR[1]    = ahb_bridge_PSLVERR;
+
+    // =========================================================================
+    // AHB arbiter - CPU vs GWCT bridge (SRAM range only!)
+    // =========================================================================
+    // CRITICAL: Only arbitrate the SRAM range (0x80000000-0x80003FFF)
+    // The DDR3 controller at 0x88000000 must NOT be arbitrated
+    
+    wire cpu_sram_access    = (AHB1HADDR >= 32'h80000000) && (AHB1HADDR < 32'h80004000);
+    wire bridge_sram_access = (bridge_HADDR >= 32'h80000000) && (bridge_HADDR < 32'h80004000);
+    
+    wire gwct_ahb_active = bridge_HSEL && bridge_sram_access;
+
+    wire [31:0] ahb_mux_HADDR  = gwct_ahb_active ? bridge_HADDR  : AHB1HADDR;
+    wire        ahb_mux_HWRITE = gwct_ahb_active ? bridge_HWRITE : AHB1HWRITE;
+    wire [2:0]  ahb_mux_HSIZE  = gwct_ahb_active ? bridge_HSIZE  : AHB1HSIZE;
+    wire [1:0]  ahb_mux_HTRANS = gwct_ahb_active ? bridge_HTRANS : AHB1HTRANS;
+    wire [31:0] ahb_mux_HWDATA = gwct_ahb_active ? bridge_HWDATA : AHB1HWDATA;
+    wire        ahb_mux_HSEL   = gwct_ahb_active ? bridge_HSEL   : (AHB1HSEL && cpu_sram_access);
+
+    // =========================================================================
+    // AHB SRAM (accessible by both CPU and GWCT)
+    // =========================================================================
+    // IMPORTANT: The Cortex-M1 AHB1 interface connects to MULTIPLE peripherals:
+    //   - 0x80000000-0x80003FFF: External SRAM (this module, arbitrated)
+    //   - 0x88000000-0x88xxxxxx: DDR3 controller (inside Cortex-M1 IP, NOT arbitrated)
+    //
+    // The arbiter above only intercepts SRAM accesses. DDR3 controller
+    // accesses go directly through without arbitration.
+    
     wire [31:0] ahb_ram_hrdata;
     wire        ahb_ram_hreadyout;
     wire [1:0]  ahb_ram_hresp;
@@ -235,114 +379,34 @@ module top (
     ) ahb_ram_inst (
         .HCLK       (HCLK),
         .HRESETn    (hwRstn),
-
-        .HADDR      (AHB1HADDR),
-        .HWRITE     (AHB1HWRITE),
-        .HSIZE      (AHB1HSIZE),
-        .HTRANS     (AHB1HTRANS),
-        .HWDATA     (AHB1HWDATA),
-        .HSEL       (AHB1HSEL),        // use CPU's internal select if it covers 0x8000_0000
-
+        .HADDR      (ahb_mux_HADDR),
+        .HWRITE     (ahb_mux_HWRITE),
+        .HSIZE      (ahb_mux_HSIZE),
+        .HTRANS     (ahb_mux_HTRANS),
+        .HWDATA     (ahb_mux_HWDATA),
+        .HSEL       (ahb_mux_HSEL),
         .HRDATA     (ahb_ram_hrdata),
         .HREADYOUT  (ahb_ram_hreadyout),
         .HRESP      (ahb_ram_hresp)
     );
 
-    // Connect the RAM outputs to the CPU inputs
+    // Route SRAM responses back to both masters
+    // Only stall CPU if GWCT is accessing SRAM, not for DDR3 accesses!
     assign AHB1HRDATA    = ahb_ram_hrdata;
-    assign AHB1HREADYOUT = ahb_ram_hreadyout;
-    assign AHB1HRESP     = ahb_ram_hresp;
+    assign AHB1HREADYOUT = gwct_ahb_active ? 1'b0 : ahb_ram_hreadyout;
+    assign AHB1HRESP     = cpu_sram_access ? ahb_ram_hresp : 2'b00;
+
+    assign bridge_HRDATA    = ahb_ram_hrdata;
+    assign bridge_HREADYOUT = ahb_ram_hreadyout;
+    assign bridge_HRESP     = ahb_ram_hresp;
 
     // =========================================================================
-    // GWCT debug bridge debug master with N-bus support
+    // Other peripherals
     // =========================================================================
-    // Single bus configuration
-    wire [31:0] gwct_PADDR;
-    wire        gwct_PSEL;
-    wire        gwct_PENABLE;
-    wire        gwct_PWRITE;
-    wire [31:0] gwct_PWDATA;
-    wire [3:0]  gwct_PSTRB;
-    wire [2:0]  gwct_PPROT;
-
-    // Slave response wires
-    wire [31:0] slave_PRDATA;
-    wire        slave_PREADY;
-    wire        slave_PSLVERR;
-
-    gwct_debug_bridge_n #(
-        .CLK_HZ(50_000_000),
-        .BAUD(115_200),
-        .NUM_APB_BUSES(1),          // Currently using 1 bus (APB1)
-        .ADDR_BITS(28)              // Address decode uses addr[31:28]
-    ) gwct_inst (
-        .clk        (HCLK),
-        .rstn       (hwRstn),
-        
-        // UART pins
-        .uart_rx    (GWCT_RX),
-        .uart_tx    (GWCT_TX),
-        
-        // APB master signals (single bus = simple wires)
-        .PADDR      (gwct_PADDR),
-        .PSEL       (gwct_PSEL),
-        .PENABLE    (gwct_PENABLE),
-        .PWRITE     (gwct_PWRITE),
-        .PWDATA     (gwct_PWDATA),
-        .PSTRB      (gwct_PSTRB),
-        .PPROT      (gwct_PPROT),
-        .PRDATA     (slave_PRDATA),
-        .PREADY     (slave_PREADY),
-        .PSLVERR    (slave_PSLVERR)
-    );
-
-    // =========================================================================
-    // APB bus mux — GWCT takes priority over Cortex-M1
-    //
-    //   gwct_apb_sel = 1  →  GWCT drives the bus
-    //   gwct_apb_sel = 0  →  Cortex-M1 drives the bus
-    // =========================================================================
-    wire gwct_apb_sel = gwct_PSEL;
-
-    wire [31:0] mux_PADDR   = gwct_apb_sel ? gwct_PADDR   : APB1PADDR;
-    wire        mux_PSEL    = gwct_apb_sel ? gwct_PSEL    : APB1PSEL;
-    wire        mux_PENABLE = gwct_apb_sel ? gwct_PENABLE : APB1PENABLE;
-    wire        mux_PWRITE  = gwct_apb_sel ? gwct_PWRITE  : APB1PWRITE;
-    wire [31:0] mux_PWDATA  = gwct_apb_sel ? gwct_PWDATA  : APB1PWDATA;
-
-    // Feed response back to Cortex-M1 (stall if GWCT owns bus)
-    assign APB1PRDATA  = slave_PRDATA;
-    assign APB1PREADY  = gwct_apb_sel ? 1'b0 : slave_PREADY;
-    assign APB1PSLVERR = slave_PSLVERR;
-
-    // =========================================================================
-    // apb_memmap slave — sees muxed bus
-    // =========================================================================
-    apb_memmap apb_memmap_inst (
-        .APBCLK   (APB1PCLK),
-        .APBRESET (APB1PRESET),
-        .PADDR    (mux_PADDR),
-        .PSEL     (mux_PSEL),
-        .PENABLE  (mux_PENABLE),
-        .PWRITE   (mux_PWRITE),
-        .PWDATA   (mux_PWDATA),
-        .PRDATA   (slave_PRDATA),
-        .PREADY   (slave_PREADY),
-        .PSLVERR  (slave_PSLVERR)
-    );
-
-    reg [23:0] ws_color;
-
     ws2812_driver ws_drv (
-        .clk(HCLK),
-        .rstn(hwRstn),
+        .clk   (HCLK),
+        .rstn  (hwRstn),
         .ws_out(WS2812_LED)
     );
-/*
-    uart_hello hello_inst (
-        .clk  (HCLK),
-        .rstn (hwRstn),
-        .tx   (GWCT_TX)
-    );
-*/
+
 endmodule

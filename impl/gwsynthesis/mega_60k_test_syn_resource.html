@@ -30,10 +30,170 @@ table td.label { width: 20%; white-space: nowrap; min-width: 20px; background-co
 <th class="label">ROM16 NUMBER</th>
 </tr>
 <tr>
-<td class="label">apb2ahb_bridge (/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v)</td>
-<td align = "center">137</td>
+<td class="label">top (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">26</td>
 <td align = "center">-</td>
+<td align = "center">130</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--u_Gowin_PLL
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--u_pll
+ (/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--u_pll_init
+ (/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v)</td>
+<td align = "center">101</td>
+<td align = "center">18</td>
+<td align = "center">165</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--Cortex_M1_instance
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">6706</td>
+<td align = "center">280</td>
+<td align = "center">8459</td>
+<td align = "center">2</td>
+<td align = "center">72</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--gwct_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+<td align = "center">104</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--uart_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v)</td>
+<td align = "center">71</td>
+<td align = "center">-</td>
+<td align = "center">96</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--packet_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v)</td>
+<td align = "center">252</td>
+<td align = "center">8</td>
+<td align = "center">146</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--apb_master_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v)</td>
+<td align = "center">100</td>
+<td align = "center">-</td>
+<td align = "center">21</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--apb_memmap_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">40</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--sysinfo_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--u_regs
+ (/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v)</td>
 <td align = "center">12</td>
+<td align = "center">-</td>
+<td align = "center">16</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--gpio_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--u_regs
+ (/home/akiel/trunk/pub/mega_60k_test/src/gpio.v)</td>
+<td align = "center">99</td>
+<td align = "center">-</td>
+<td align = "center">35</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--apb2ahb_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">132</td>
+<td align = "center">-</td>
+<td align = "center">10</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--ahb_ram_inst
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">21</td>
+<td align = "center">-</td>
+<td align = "center">8</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--ws_drv
+ (/home/akiel/trunk/pub/mega_60k_test/src/top.v)</td>
+<td align = "center">51</td>
+<td align = "center">-</td>
+<td align = "center">120</td>
 <td align = "center">-</td>
 <td align = "center">-</td>
 <td align = "center">-</td>

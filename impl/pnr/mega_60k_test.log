@@ -2,120 +2,30 @@ Reading netlist file: "/home/akiel/trunk/pub/mega_60k_test/impl/gwsynthesis/mega
 Parsing netlist file "/home/akiel/trunk/pub/mega_60k_test/impl/gwsynthesis/mega_60k_test.vg" completed
 Processing netlist completed
 Reading constraint file: "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst"
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":10 | Can't find object named 'HCLK'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":11 | Can't find object named 'HCLK'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":13 | Can't find object named 'hwRstn'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":14 | Can't find object named 'hwRstn'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":18 | Can't find object named 'UART1RXD'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":19 | Can't find object named 'UART1RXD'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":20 | Can't find object named 'UART1TXD'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":21 | Can't find object named 'UART1TXD'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":26 | Can't find object named 'GPIO[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":27 | Can't find object named 'GPIO[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":28 | Can't find object named 'GPIO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":29 | Can't find object named 'GPIO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":30 | Can't find object named 'GPIO[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":31 | Can't find object named 'GPIO[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":34 | Can't find object named 'GWCT_TX'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":35 | Can't find object named 'GWCT_TX'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":37 | Can't find object named 'GWCT_RX'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":38 | Can't find object named 'GWCT_RX'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":41 | Can't find object named 'BOOT_LED_A'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":42 | Can't find object named 'BOOT_LED_A'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":44 | Can't find object named 'WS2812_LED'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":45 | Can't find object named 'WS2812_LED'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":50 | Can't find object named 'JTAG_7_SWDIO'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":51 | Can't find object named 'JTAG_7_SWDIO'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":52 | Can't find object named 'JTAG_9_SWDCLK'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":53 | Can't find object named 'JTAG_9_SWDCLK'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":58 | Can't find object named 'DDR_BA_O[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":59 | Can't find object named 'DDR_BA_O[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":60 | Can't find object named 'DDR_BA_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":61 | Can't find object named 'DDR_BA_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":62 | Can't find object named 'DDR_BA_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":63 | Can't find object named 'DDR_BA_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":66 | Can't find object named 'DDR_ADDR_O[13]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":67 | Can't find object named 'DDR_ADDR_O[13]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":68 | Can't find object named 'DDR_ADDR_O[12]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":69 | Can't find object named 'DDR_ADDR_O[12]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":70 | Can't find object named 'DDR_ADDR_O[11]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":71 | Can't find object named 'DDR_ADDR_O[11]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":72 | Can't find object named 'DDR_ADDR_O[10]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":73 | Can't find object named 'DDR_ADDR_O[10]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":74 | Can't find object named 'DDR_ADDR_O[9]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":75 | Can't find object named 'DDR_ADDR_O[9]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":76 | Can't find object named 'DDR_ADDR_O[8]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":77 | Can't find object named 'DDR_ADDR_O[8]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":78 | Can't find object named 'DDR_ADDR_O[7]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":79 | Can't find object named 'DDR_ADDR_O[7]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":80 | Can't find object named 'DDR_ADDR_O[6]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":81 | Can't find object named 'DDR_ADDR_O[6]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":82 | Can't find object named 'DDR_ADDR_O[5]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":83 | Can't find object named 'DDR_ADDR_O[5]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":84 | Can't find object named 'DDR_ADDR_O[4]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":85 | Can't find object named 'DDR_ADDR_O[4]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":86 | Can't find object named 'DDR_ADDR_O[3]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":87 | Can't find object named 'DDR_ADDR_O[3]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":88 | Can't find object named 'DDR_ADDR_O[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":89 | Can't find object named 'DDR_ADDR_O[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":90 | Can't find object named 'DDR_ADDR_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":91 | Can't find object named 'DDR_ADDR_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":92 | Can't find object named 'DDR_ADDR_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":93 | Can't find object named 'DDR_ADDR_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":96 | Can't find object named 'DDR_ODT_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":97 | Can't find object named 'DDR_ODT_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":98 | Can't find object named 'DDR_CKE_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":99 | Can't find object named 'DDR_CKE_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":100 | Can't find object named 'DDR_WE_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":101 | Can't find object named 'DDR_WE_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":102 | Can't find object named 'DDR_CAS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":103 | Can't find object named 'DDR_CAS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":104 | Can't find object named 'DDR_RAS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":105 | Can't find object named 'DDR_RAS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":106 | Can't find object named 'DDR_CS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":107 | Can't find object named 'DDR_CS_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":108 | Can't find object named 'DDR_RESET_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":109 | Can't find object named 'DDR_RESET_N_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":112 | Can't find object named 'DDR_CLK_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":113 | Can't find object named 'DDR_CLK_O'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":116 | Can't find object named 'DDR_DQM_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":117 | Can't find object named 'DDR_DQM_O[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":118 | Can't find object named 'DDR_DQM_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":119 | Can't find object named 'DDR_DQM_O[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":122 | Can't find object named 'DDR_DQ_IO[15]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":123 | Can't find object named 'DDR_DQ_IO[15]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":124 | Can't find object named 'DDR_DQ_IO[14]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":125 | Can't find object named 'DDR_DQ_IO[14]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":126 | Can't find object named 'DDR_DQ_IO[13]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":127 | Can't find object named 'DDR_DQ_IO[13]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":128 | Can't find object named 'DDR_DQ_IO[12]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":129 | Can't find object named 'DDR_DQ_IO[12]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":130 | Can't find object named 'DDR_DQ_IO[11]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":131 | Can't find object named 'DDR_DQ_IO[11]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":132 | Can't find object named 'DDR_DQ_IO[10]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":133 | Can't find object named 'DDR_DQ_IO[10]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":134 | Can't find object named 'DDR_DQ_IO[9]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":135 | Can't find object named 'DDR_DQ_IO[9]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":136 | Can't find object named 'DDR_DQ_IO[8]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":137 | Can't find object named 'DDR_DQ_IO[8]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":138 | Can't find object named 'DDR_DQ_IO[7]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":139 | Can't find object named 'DDR_DQ_IO[7]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":140 | Can't find object named 'DDR_DQ_IO[6]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":141 | Can't find object named 'DDR_DQ_IO[6]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":142 | Can't find object named 'DDR_DQ_IO[5]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":143 | Can't find object named 'DDR_DQ_IO[5]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":144 | Can't find object named 'DDR_DQ_IO[4]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":145 | Can't find object named 'DDR_DQ_IO[4]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":146 | Can't find object named 'DDR_DQ_IO[3]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":147 | Can't find object named 'DDR_DQ_IO[3]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":148 | Can't find object named 'DDR_DQ_IO[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":149 | Can't find object named 'DDR_DQ_IO[2]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":150 | Can't find object named 'DDR_DQ_IO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":151 | Can't find object named 'DDR_DQ_IO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":152 | Can't find object named 'DDR_DQ_IO[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":153 | Can't find object named 'DDR_DQ_IO[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":156 | Can't find object named 'DDR_DQS_IO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":157 | Can't find object named 'DDR_DQS_IO[1]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":158 | Can't find object named 'DDR_DQS_IO[0]'
-ERROR  (CT1135) : "/home/akiel/trunk/pub/mega_60k_test/src/pins.cst":159 | Can't find object named 'DDR_DQS_IO[0]'
-Physical Constraint parsed completed with errors
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'gowin_add_ibuf_net_HCLK' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal '\Cortex_M1_instance/JTAG_9_1 ' by the specified constraint. And then it may lead to the excessive delay or skew
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "/home/akiel/trunk/pub/mega_60k_test/impl/pnr/mega_60k_test.power.html" completed
+Generate file "/home/akiel/trunk/pub/mega_60k_test/impl/pnr/mega_60k_test.pin.html" completed
+Generate file "/home/akiel/trunk/pub/mega_60k_test/impl/pnr/mega_60k_test.rpt.html" completed
+Generate file "/home/akiel/trunk/pub/mega_60k_test/impl/pnr/mega_60k_test.rpt.txt" completed
+Generate file "/home/akiel/trunk/pub/mega_60k_test/impl/pnr/mega_60k_test.tr.html" completed
+Mon Mar  2 00:08:49 2026
+
