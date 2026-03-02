@@ -20,6 +20,7 @@
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/top.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

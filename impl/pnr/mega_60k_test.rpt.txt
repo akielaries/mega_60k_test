@@ -12,27 +12,27 @@
   <Part Number>: GW5AT-LV60PG484AC2/I1
   <Device>: GW5AT-60
   <Device Version>: B
-  <Created Time>:Sun Mar  1 22:28:08 2026
+  <Created Time>:Sun Mar  1 23:56:07 2026
 
 
 2. PnR Details
 
   Running placement:
     Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 1: CPU time = 0h 0m 0.806s, Elapsed time = 0h 0m 0.795s
-    Placement Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+    Placement Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 0.998s
+    Placement Phase 2: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
     Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
-    Total Placement: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+    Total Placement: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.005s, Elapsed time = 0h 0m 0.005s
-    Routing Phase 1: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
-    Routing Phase 2: CPU time = 0h 0m 0.166s, Elapsed time = 0h 0m 0.161s
+    Routing Phase 0: CPU time = 0h 0m 0.006s, Elapsed time = 0h 0m 0.006s
+    Routing Phase 1: CPU time = 0h 0m 33s, Elapsed time = 0h 0m 33s
+    Routing Phase 2: CPU time = 0h 0m 0.178s, Elapsed time = 0h 0m 0.174s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
+    Total Routing: CPU time = 0h 0m 34s, Elapsed time = 0h 0m 33s
  Generate output files:
     CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 55s, Elapsed time = 0h 0m 54s, Peak memory usage = 5689MB
+ Total Time and Memory Usage: CPU time = 0h 0m 51s, Elapsed time = 0h 0m 51s, Peak memory usage = 7177MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 9445/59904                          |  16%
-    --LUT,ALU,ROM16           | 9445(9107 LUT, 338 ALU, 0 ROM16)    | -
+  Logic                       | 9648/59904                          |  17%
+    --LUT,ALU,ROM16           | 9648(9308 LUT, 340 ALU, 0 ROM16)    | -
     --SSRAM(RAM16)            | 0                                   | -
-  Register                    | 7381/60780                          |  13%
+  Register                    | 7505/60780                          |  13%
     --Logic Register as Latch | 0/59904                             |  0%
-    --Logic Register as FF    | 7358/59904                          |  13%
+    --Logic Register as FF    | 7482/59904                          |  13%
     --I/O Register as Latch   | 0/876                               |  0%
     --I/O Register as FF      | 23/876                              |  3%
-  CLS                         | 7943/29952                          |  27%
+  CLS                         | 8017/29952                          |  27%
   I/O Port                    | 77/297                              |  26%
   I/O Buf                     | 74                                  | -
     --Input Buf               | 5                                   | -
@@ -94,8 +94,8 @@
   ------------------------------------------
   Clock Resource| Usage         | Utilization 
   ------------------------------------------
-  PRIMARY       | 4/8           | 50%
-  LW            | 8/8           | 100%
+  PRIMARY       | 3/8           | 38%
+  LW            | 7/8           | 88%
   GCLK_PIN      | 8/40          | 20%
   CLKDIV        | 1/20          | 5%
   DDRDLL        | 1/5           | 20%
@@ -109,16 +109,14 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  gowin_add_ibuf_net_HCLK| PRIMARY        |  PTR1 PTR2 PTR3 PBR0 PBR1 PBR2 PBR3
+  gowin_add_ibuf_net_HCLK| PRIMARY        |  PTR1 PTR2 PTR3 PBR1 PBR2 PBR3
   Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PBR1 PBR2
-  Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApMst/NextHTrans[1]| PRIMARY        |  PTR1 PBR1 PBR2
   Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out| PRIMARY        |  PTR0 PTR1 PBR0 PBR1
   gowin_add_ibuf_net_hwRstn| LW             |  -
   Cortex_M1_instance/dbgRstGen| LW             |  -
   Cortex_M1_instance/AHB1HRESET_d| LW             |  -
   Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/biu_rdy| LW             |  -
   Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/adv_de_to_ex_spec| LW             |  -
-  Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_ahb/haddr_en_19| LW             |  -
   Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/rd_data_valid| LW             |  -
   Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/ddr_rst| LW             |  -
   DDR_MEM_CLK    | HCLK           | BANK10_BANK11_HCLK3 BANK9_HCLK0

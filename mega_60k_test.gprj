@@ -7,6 +7,7 @@
     <FileList>
         <File path="src/ahb1_sram.v" type="file.verilog" enable="1"/>
         <File path="src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v" type="file.verilog" enable="0"/>
+        <File path="src/apb_ahb_bridge.v" type="file.verilog" enable="1"/>
         <File path="src/apb_memmap.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>

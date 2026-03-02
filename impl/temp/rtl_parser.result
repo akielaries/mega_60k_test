@@ -156,5 +156,13 @@
     "ModuleName" : "ws2812_driver"
    }
   ]
+ },
+ {
+  "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
+  "InstLine" : 24,
+  "InstName" : "apb2ahb_bridge",
+  "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "apb2ahb_bridge"
  }
 ]

@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sun Mar  1 22:28:08 2026
+<td>Sun Mar  1 23:56:07 2026
 </td>
 </tr>
 <tr>
@@ -98,23 +98,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Placement Phase 1: CPU time = 0h 0m 0.806s, Elapsed time = 0h 0m 0.795s
-   Placement Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+   Placement Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 0.998s
+   Placement Phase 2: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
    Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
-   Total Placement: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+   Total Placement: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0.005s, Elapsed time = 0h 0m 0.005s
-   Routing Phase 1: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
-   Routing Phase 2: CPU time = 0h 0m 0.166s, Elapsed time = 0h 0m 0.161s
+   Routing Phase 0: CPU time = 0h 0m 0.006s, Elapsed time = 0h 0m 0.006s
+   Routing Phase 1: CPU time = 0h 0m 33s, Elapsed time = 0h 0m 33s
+   Routing Phase 2: CPU time = 0h 0m 0.178s, Elapsed time = 0h 0m 0.174s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
+   Total Routing: CPU time = 0h 0m 34s, Elapsed time = 0h 0m 33s
 Generate output files:
    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 55s, Elapsed time = 0h 0m 54s, Peak memory usage = 5689MB</td>
+<td>CPU time = 0h 0m 51s, Elapsed time = 0h 0m 51s, Peak memory usage = 7177MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>9445/59904</td>
-<td>16%</td>
+<td>9648/59904</td>
+<td>17%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>9445(9107 LUT, 338 ALU, 0 ROM16)</td>
+<td>9648(9308 LUT, 340 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>7381/60780</td>
+<td>7505/60780</td>
 <td>13%</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>7358/59904</td>
+<td>7482/59904</td>
 <td>13%</td>
 </tr>
 <tr>
@@ -169,7 +169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>7943/29952</td>
+<td>8017/29952</td>
 <td>27%</td>
 </tr>
 <tr>
@@ -277,13 +277,13 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PRIMARY</td>
-<td>4/8</td>
-<td>50%</td>
+<td>3/8</td>
+<td>38%</td>
 </tr>
 <tr>
 <td class="label">LW</td>
-<td>8/8</td>
-<td>100%</td>
+<td>7/8</td>
+<td>88%</td>
 </tr>
 <tr>
 <td class="label">GCLK_PIN</td>
@@ -322,17 +322,12 @@ Generate output files:
 <tr>
 <td class="label">gowin_add_ibuf_net_HCLK</td>
 <td>PRIMARY</td>
-<td> PTR1 PTR2 PTR3 PBR0 PBR1 PBR2 PBR3</td>
+<td> PTR1 PTR2 PTR3 PBR1 PBR2 PBR3</td>
 </tr>
 <tr>
 <td class="label">Cortex_M1_instance/JTAG_9_1</td>
 <td>PRIMARY</td>
 <td> PBR1 PBR2</td>
-</tr>
-<tr>
-<td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApMst/NextHTrans[1]</td>
-<td>PRIMARY</td>
-<td> PTR1 PBR1 PBR2</td>
 </tr>
 <tr>
 <td class="label">Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out</td>
@@ -361,11 +356,6 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/adv_de_to_ex_spec</td>
-<td>LW</td>
-<td> -</td>
-</tr>
-<tr>
-<td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_ahb/haddr_en_19</td>
 <td>LW</td>
 <td> -</td>
 </tr>
