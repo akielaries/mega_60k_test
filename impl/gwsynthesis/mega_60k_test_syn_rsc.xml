@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="26" Lut="79" T_Register="7383(26)" T_Alu="306(0)" T_Lut="8968(79)" T_MULT27X36="2(0)" T_Bsram="73(0)">
+<Module name="top" Register="26" Lut="75" T_Register="7381(26)" T_Alu="306(0)" T_Lut="9133(75)" T_MULT27X36="2(0)" T_Bsram="81(0)">
  <SubModule name="u_Gowin_PLL" T_Register="101(0)" T_Alu="18(0)" T_Lut="163(0)" T_Bsram="1(0)">
   <SubModule name="u_pll"/>
   <SubModule name="u_pll_init" Register="101" Alu="18" Lut="163" Bsram="1" T_Register="101(101)" T_Alu="18(18)" T_Lut="163(163)" T_Bsram="1(1)"/>
  </SubModule>
- <SubModule name="Cortex_M1_instance" Register="6708" Alu="280" Lut="8273" MULT27X36="2" Bsram="72" T_Register="6708(6708)" T_Alu="280(280)" T_Lut="8273(8273)" T_MULT27X36="2(2)" T_Bsram="72(72)"/>
- <SubModule name="gwct_inst" T_Register="386(0)" T_Alu="8(0)" T_Lut="221(0)">
-  <SubModule name="uart_inst" Register="71" Lut="97" T_Register="71(71)" T_Lut="97(97)"/>
-  <SubModule name="packet_inst" Register="227" Alu="8" Lut="109" T_Register="227(227)" T_Alu="8(8)" T_Lut="109(109)"/>
-  <SubModule name="apb_master_inst" Register="88" Lut="15" T_Register="88(88)" T_Lut="15(15)"/>
+ <SubModule name="Cortex_M1_instance" Register="6706" Alu="280" Lut="8441" MULT27X36="2" Bsram="72" T_Register="6706(6706)" T_Alu="280(280)" T_Lut="8441(8441)" T_MULT27X36="2(2)" T_Bsram="72(72)"/>
+ <SubModule name="ahb_ram_inst" Lut="9" Bsram="8" T_Lut="9(9)" T_Bsram="8(8)"/>
+ <SubModule name="gwct_inst" T_Register="386(0)" T_Alu="8(0)" T_Lut="217(0)">
+  <SubModule name="uart_inst" Register="71" Lut="98" T_Register="71(71)" T_Lut="98(98)"/>
+  <SubModule name="packet_inst" Register="227" Alu="8" Lut="106" T_Register="227(227)" T_Alu="8(8)" T_Lut="106(106)"/>
+  <SubModule name="apb_master_inst" Register="88" Lut="13" T_Register="88(88)" T_Lut="13(13)"/>
  </SubModule>
  <SubModule name="apb_memmap_inst" Lut="46" T_Register="111(0)" T_Lut="98(46)">
   <SubModule name="sysinfo_inst" T_Register="12(0)" T_Lut="17(0)">
@@ -18,5 +19,5 @@
    <SubModule name="u_regs" Register="99" Lut="35" T_Register="99(99)" T_Lut="35(35)"/>
   </SubModule>
  </SubModule>
- <SubModule name="ws_drv" Register="51" Lut="134" T_Register="51(51)" T_Lut="134(134)"/>
+ <SubModule name="ws_drv" Register="51" Lut="130" T_Register="51(51)" T_Lut="130(130)"/>
 </Module>

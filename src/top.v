@@ -83,6 +83,27 @@ module top (
     wire        APB1PCLK;
     wire        APB1PRESET;
     wire        APB1PSEL;
+
+    // =========================================================================
+    // AHB1 wires from Cortex-M1 APB bridge
+    // =========================================================================
+    wire [31:0] AHB1HRDATA; //input [31:0] AHB1HRDATA
+    wire AHB1HREADYOUT; //input AHB1HREADYOUT
+	wire [1:0] AHB1HRESP; //input [1:0] AHB1HRESP
+	wire [1:0] AHB1HTRANS; //output [1:0] AHB1HTRANS
+	wire [2:0] AHB1HBURST; //output [2:0] AHB1HBURST
+	wire [3:0] AHB1HPROT; //output [3:0] AHB1HPROT
+	wire [2:0] AHB1HSIZE; //output [2:0] AHB1HSIZE
+	wire AHB1HWRITE; //output AHB1HWRITE
+	wire AHB1HREADYMUX; //output AHB1HREADYMUX
+	wire [3:0] AHB1HMASTER; //output [3:0] AHB1HMASTER
+	wire AHB1HMASTLOCK; //output AHB1HMASTLOCK
+	wire [31:0] AHB1HADDR; //output [31:0] AHB1HADDR
+    wire [31:0] AHB1HWDATA; //output [31:0] AHB1HWDATA
+    wire AHB1HSEL; //output AHB1HSEL
+	wire AHB1HCLK; //output AHB1HCLK
+    wire AHB1HRESET; //output AHB1HRESET
+
     // =========================================================================
     // DDR3 configuration
     // =========================================================================
@@ -141,6 +162,24 @@ module top (
         .JTAG_9(JTAG_9_SWDCLK),
         .UART1RXD(UART1RXD),
         .UART1TXD(UART1TXD),
+            
+        // AHB1 interface
+		.AHB1HRDATA(AHB1HRDATA), //input [31:0] AHB1HRDATA
+		.AHB1HREADYOUT(AHB1HREADYOUT), //input AHB1HREADYOUT
+		.AHB1HRESP(AHB1HRESP), //input [1:0] AHB1HRESP
+		.AHB1HTRANS(AHB1HTRANS), //output [1:0] AHB1HTRANS
+		.AHB1HBURST(AHB1HBURST), //output [2:0] AHB1HBURST
+		.AHB1HPROT(AHB1HPROT), //output [3:0] AHB1HPROT
+		.AHB1HSIZE(AHB1HSIZE), //output [2:0] AHB1HSIZE
+		.AHB1HWRITE(AHB1HWRITE), //output AHB1HWRITE
+		.AHB1HREADYMUX(AHB1HREADYMUX), //output AHB1HREADYMUX
+		.AHB1HMASTER(AHB1HMASTER), //output [3:0] AHB1HMASTER
+		.AHB1HMASTLOCK(AHB1HMASTLOCK), //output AHB1HMASTLOCK
+		.AHB1HADDR(AHB1HADDR), //output [31:0] AHB1HADDR
+		.AHB1HWDATA(AHB1HWDATA), //output [31:0] AHB1HWDATA
+		.AHB1HSEL(AHB1HSEL), //output AHB1HSEL
+		.AHB1HCLK(AHB1HCLK), //output AHB1HCLK
+		.AHB1HRESET(AHB1HRESET), //output AHB1HRESET
 
         // APB1 interface
         .APB1PADDR(APB1PADDR),
@@ -183,6 +222,36 @@ module top (
         .HCLK(HCLK),
         .hwRstn(hwRstn)
     );
+    // =========================================================================
+    // AHB1 RAM (16 KB scratch at 0x8000_0000)
+    // =========================================================================
+    wire [31:0] ahb_ram_hrdata;
+    wire        ahb_ram_hreadyout;
+    wire [1:0]  ahb_ram_hresp;
+
+    ahb_sram #(
+        .SIZE      (16384),
+        .BASE_ADDR (32'h8000_0000)
+    ) ahb_ram_inst (
+        .HCLK       (HCLK),
+        .HRESETn    (hwRstn),
+
+        .HADDR      (AHB1HADDR),
+        .HWRITE     (AHB1HWRITE),
+        .HSIZE      (AHB1HSIZE),
+        .HTRANS     (AHB1HTRANS),
+        .HWDATA     (AHB1HWDATA),
+        .HSEL       (AHB1HSEL),        // use CPU's internal select if it covers 0x8000_0000
+
+        .HRDATA     (ahb_ram_hrdata),
+        .HREADYOUT  (ahb_ram_hreadyout),
+        .HRESP      (ahb_ram_hresp)
+    );
+
+    // Connect the RAM outputs to the CPU inputs
+    assign AHB1HRDATA    = ahb_ram_hrdata;
+    assign AHB1HREADYOUT = ahb_ram_hreadyout;
+    assign AHB1HRESP     = ahb_ram_hresp;
 
     // =========================================================================
     // GWCT debug bridge debug master with N-bus support

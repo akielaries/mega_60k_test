@@ -889,6 +889,7 @@ WARN  (EX0211) : The output port "updata_dqs_req" of module "~ddr_phy_top.DDR3_M
 WARN  (EX0211) : The output port "updata_dqs_finished" of module "~ddr_phy_top.DDR3_Memory_Interface_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/Downloads/Gowin_V1.9.12.01_linux/IDE/ipcore/GOWIN_EMPU_M1/data/debug/ddr3_1_4code_hs.v":7173)
 WARN  (EX0200) : Property "syn_encoding" set invalid for "JTAGcurr"("/home/akiel/Downloads/Gowin_V1.9.12.01_linux/IDE/ipcore/GOWIN_EMPU_M1/data/debug/DAPJtagDpProtocol.v":662)
 [5%] Running netlist conversion ...
+WARN  (CV0018) : Input AHB1HRESP[1] is unused("/home/akiel/Downloads/Gowin_V1.9.12.01_linux/IDE/ipcore/GOWIN_EMPU_M1/data/debug/Gowin_EMPU_M1_top.v":1014)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed

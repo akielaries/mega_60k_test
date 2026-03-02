@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 115,
+    "InstLine" : 136,
     "InstName" : "u_Gowin_PLL",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 1,
@@ -35,15 +35,15 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 136,
+    "InstLine" : 157,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-    "ModuleLine" : 62340,
+    "ModuleLine" : 63173,
     "ModuleName" : "Gowin_EMPU_M1_Top",
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 63085,
+      "InstLine" : 64446,
       "InstName" : "M1_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
       "ModuleLine" : 199,
@@ -51,17 +51,25 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 63194,
+      "InstLine" : 64556,
       "InstName" : "u_GowinCM1AhbExtWrapper",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "ModuleLine" : 37119,
+      "ModuleLine" : 37714,
       "ModuleName" : "GowinCM1AhbExtWrapper"
      }
     ]
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 209,
+    "InstLine" : 235,
+    "InstName" : "ahb_ram_inst",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "ahb_sram"
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
+    "InstLine" : 278,
     "InstName" : "gwct_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/gwct_bridge.v",
     "ModuleLine" : 57,
@@ -95,7 +103,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 252,
+    "InstLine" : 321,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -141,7 +149,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_60k_test/src/top.v",
-    "InstLine" : 267,
+    "InstLine" : 336,
     "InstName" : "ws_drv",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
     "ModuleLine" : 1,

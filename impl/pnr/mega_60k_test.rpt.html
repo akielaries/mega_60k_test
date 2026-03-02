@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Feb 28 17:58:44 2026
+<td>Sun Mar  1 22:28:08 2026
 </td>
 </tr>
 <tr>
@@ -98,23 +98,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Placement Phase 1: CPU time = 0h 0m 0.996s, Elapsed time = 0h 0m 0.993s
+   Placement Phase 1: CPU time = 0h 0m 0.806s, Elapsed time = 0h 0m 0.795s
    Placement Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
-   Placement Phase 3: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+   Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
    Total Placement: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0.005s, Elapsed time = 0h 0m 0.005s
    Routing Phase 1: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
-   Routing Phase 2: CPU time = 0h 0m 0.16s, Elapsed time = 0h 0m 0.155s
+   Routing Phase 2: CPU time = 0h 0m 0.166s, Elapsed time = 0h 0m 0.161s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 40s, Elapsed time = 0h 0m 39s
+   Total Routing: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s
 Generate output files:
    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 55s, Elapsed time = 0h 0m 54s, Peak memory usage = 3959MB</td>
+<td>CPU time = 0h 0m 55s, Elapsed time = 0h 0m 54s, Peak memory usage = 5689MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>9282/59904</td>
+<td>9445/59904</td>
 <td>16%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>9282(8942 LUT, 340 ALU, 0 ROM16)</td>
+<td>9445(9107 LUT, 338 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>7383/60780</td>
+<td>7381/60780</td>
 <td>13%</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>7360/59904</td>
+<td>7358/59904</td>
 <td>13%</td>
 </tr>
 <tr>
@@ -169,7 +169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>7841/29952</td>
+<td>7943/29952</td>
 <td>27%</td>
 </tr>
 <tr>
@@ -204,8 +204,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>16 SDPB<br/>64 DPB<br/>1 pROM<br/></td>
-<td>69%</td>
+<td>24 SDPB<br/>64 DPB<br/>1 pROM<br/></td>
+<td>76%</td>
 </tr>
 <tr>
 <td class="label">DSP</td>
@@ -277,8 +277,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PRIMARY</td>
-<td>3/8</td>
-<td>38%</td>
+<td>4/8</td>
+<td>50%</td>
 </tr>
 <tr>
 <td class="label">LW</td>
@@ -322,12 +322,17 @@ Generate output files:
 <tr>
 <td class="label">gowin_add_ibuf_net_HCLK</td>
 <td>PRIMARY</td>
-<td> PTR1 PTR2 PTR3 PBR1 PBR2 PBR3</td>
+<td> PTR1 PTR2 PTR3 PBR0 PBR1 PBR2 PBR3</td>
 </tr>
 <tr>
 <td class="label">Cortex_M1_instance/JTAG_9_1</td>
 <td>PRIMARY</td>
 <td> PBR1 PBR2</td>
+</tr>
+<tr>
+<td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApMst/NextHTrans[1]</td>
+<td>PRIMARY</td>
+<td> PTR1 PBR1 PBR2</td>
 </tr>
 <tr>
 <td class="label">Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out</td>
@@ -345,7 +350,7 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">Cortex_M1_instance/APB1PRESET_d</td>
+<td class="label">Cortex_M1_instance/AHB1HRESET_d</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -360,7 +365,7 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_ahb/haddr_en_15</td>
+<td class="label">Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_ahb/haddr_en_19</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -1375,11 +1380,11 @@ Generate output files:
 <tr>
 <td class="label">GPIO[4]</td>
 <td>-</td>
-<td>F16/1</td>
+<td>D16/1</td>
 <td>N</td>
 <td>io</td>
-<td>IOT89[A]</td>
-<td>Q0REF_T_IN0</td>
+<td>IOT87[B]</td>
+<td>-</td>
 <td>LVCMOS33</td>
 <td>8</td>
 <td>NONE</td>
@@ -1398,11 +1403,11 @@ Generate output files:
 <tr>
 <td class="label">GPIO[5]</td>
 <td>-</td>
-<td>D16/1</td>
+<td>F16/1</td>
 <td>N</td>
 <td>io</td>
-<td>IOT87[B]</td>
-<td>-</td>
+<td>IOT89[A]</td>
+<td>Q0REF_T_IN0</td>
 <td>LVCMOS33</td>
 <td>8</td>
 <td>NONE</td>
@@ -1467,98 +1472,6 @@ Generate output files:
 <tr>
 <td class="label">GPIO[8]</td>
 <td>-</td>
-<td>V17/8</td>
-<td>N</td>
-<td>io</td>
-<td>IOB79[A]</td>
-<td>CSI_B</td>
-<td>LVCMOS33</td>
-<td>8</td>
-<td>NONE</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>SLOW</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>3.3</td>
-<td>MEDIUM</td>
-<td>NONE</td>
-<td>OFF</td>
-</tr>
-<tr>
-<td class="label">GPIO[9]</td>
-<td>-</td>
-<td>AB18/8</td>
-<td>N</td>
-<td>io</td>
-<td>IOB77[B]</td>
-<td>BPLL1_C_IN2/BPLL1_C_FB0</td>
-<td>LVCMOS33</td>
-<td>8</td>
-<td>NONE</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>SLOW</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>3.3</td>
-<td>MEDIUM</td>
-<td>NONE</td>
-<td>OFF</td>
-</tr>
-<tr>
-<td class="label">GPIO[10]</td>
-<td>-</td>
-<td>E14/1</td>
-<td>N</td>
-<td>io</td>
-<td>IOT78[B]</td>
-<td>-</td>
-<td>LVCMOS33</td>
-<td>8</td>
-<td>NONE</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>SLOW</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>3.3</td>
-<td>MEDIUM</td>
-<td>NONE</td>
-<td>OFF</td>
-</tr>
-<tr>
-<td class="label">GPIO[11]</td>
-<td>-</td>
-<td>F13/1</td>
-<td>N</td>
-<td>io</td>
-<td>IOT80[A]</td>
-<td>TPLL0_T_IN1/TPLL0_T_FB1</td>
-<td>LVCMOS33</td>
-<td>8</td>
-<td>NONE</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>SLOW</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>OFF</td>
-<td>3.3</td>
-<td>MEDIUM</td>
-<td>NONE</td>
-<td>OFF</td>
-</tr>
-<tr>
-<td class="label">GPIO[12]</td>
-<td>-</td>
 <td>D14/1</td>
 <td>N</td>
 <td>io</td>
@@ -1580,7 +1493,7 @@ Generate output files:
 <td>OFF</td>
 </tr>
 <tr>
-<td class="label">GPIO[13]</td>
+<td class="label">GPIO[9]</td>
 <td>-</td>
 <td>F14/1</td>
 <td>N</td>
@@ -1603,7 +1516,7 @@ Generate output files:
 <td>OFF</td>
 </tr>
 <tr>
-<td class="label">GPIO[14]</td>
+<td class="label">GPIO[10]</td>
 <td>-</td>
 <td>D15/1</td>
 <td>N</td>
@@ -1626,13 +1539,105 @@ Generate output files:
 <td>OFF</td>
 </tr>
 <tr>
-<td class="label">GPIO[15]</td>
+<td class="label">GPIO[11]</td>
 <td>-</td>
 <td>E16/1</td>
 <td>N</td>
 <td>io</td>
 <td>IOT87[A]</td>
 <td>-</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>NONE</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>SLOW</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>3.3</td>
+<td>MEDIUM</td>
+<td>NONE</td>
+<td>OFF</td>
+</tr>
+<tr>
+<td class="label">GPIO[12]</td>
+<td>-</td>
+<td>V17/8</td>
+<td>N</td>
+<td>io</td>
+<td>IOB79[A]</td>
+<td>CSI_B</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>NONE</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>SLOW</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>3.3</td>
+<td>MEDIUM</td>
+<td>NONE</td>
+<td>OFF</td>
+</tr>
+<tr>
+<td class="label">GPIO[13]</td>
+<td>-</td>
+<td>AB18/8</td>
+<td>N</td>
+<td>io</td>
+<td>IOB77[B]</td>
+<td>BPLL1_C_IN2/BPLL1_C_FB0</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>NONE</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>SLOW</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>3.3</td>
+<td>MEDIUM</td>
+<td>NONE</td>
+<td>OFF</td>
+</tr>
+<tr>
+<td class="label">GPIO[14]</td>
+<td>-</td>
+<td>E14/1</td>
+<td>N</td>
+<td>io</td>
+<td>IOT78[B]</td>
+<td>-</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>NONE</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>SLOW</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>OFF</td>
+<td>3.3</td>
+<td>MEDIUM</td>
+<td>NONE</td>
+<td>OFF</td>
+</tr>
+<tr>
+<td class="label">GPIO[15]</td>
+<td>-</td>
+<td>F13/1</td>
+<td>N</td>
+<td>io</td>
+<td>IOT80[A]</td>
+<td>TPLL0_T_IN1/TPLL0_T_FB1</td>
 <td>LVCMOS33</td>
 <td>8</td>
 <td>NONE</td>
@@ -2225,7 +2230,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">E14/1</td>
-<td>GPIO[10]</td>
+<td>GPIO[14]</td>
 <td>io</td>
 <td>IOT78[B]</td>
 <td>-</td>
@@ -2246,7 +2251,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">F13/1</td>
-<td>GPIO[11]</td>
+<td>GPIO[15]</td>
 <td>io</td>
 <td>IOT80[A]</td>
 <td>TPLL0_T_IN1/TPLL0_T_FB1</td>
@@ -2267,7 +2272,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">F14/1</td>
-<td>GPIO[13]</td>
+<td>GPIO[9]</td>
 <td>io</td>
 <td>IOT80[B]</td>
 <td>TPLL0_C_IN1/TPLL0_C_FB1</td>
@@ -2288,7 +2293,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">D14/1</td>
-<td>GPIO[12]</td>
+<td>GPIO[8]</td>
 <td>io</td>
 <td>IOT82[A]</td>
 <td>PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0</td>
@@ -2309,7 +2314,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">D15/1</td>
-<td>GPIO[14]</td>
+<td>GPIO[10]</td>
 <td>io</td>
 <td>IOT82[B]</td>
 <td>TPLL0_C_IN2/TPLL0_C_FB0</td>
@@ -2372,7 +2377,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">E16/1</td>
-<td>GPIO[15]</td>
+<td>GPIO[11]</td>
 <td>io</td>
 <td>IOT87[A]</td>
 <td>-</td>
@@ -2393,7 +2398,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">D16/1</td>
-<td>GPIO[5]</td>
+<td>GPIO[4]</td>
 <td>io</td>
 <td>IOT87[B]</td>
 <td>-</td>
@@ -2414,7 +2419,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">F16/1</td>
-<td>GPIO[4]</td>
+<td>GPIO[5]</td>
 <td>io</td>
 <td>IOT89[A]</td>
 <td>Q0REF_T_IN0</td>
@@ -4724,7 +4729,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">AB18/8</td>
-<td>GPIO[9]</td>
+<td>GPIO[13]</td>
 <td>io</td>
 <td>IOB77[B]</td>
 <td>BPLL1_C_IN2/BPLL1_C_FB0</td>
@@ -4745,7 +4750,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">V17/8</td>
-<td>GPIO[8]</td>
+<td>GPIO[12]</td>
 <td>io</td>
 <td>IOB79[A]</td>
 <td>CSI_B</td>
