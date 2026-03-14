@@ -6,7 +6,7 @@
 //Part Number: GW5AT-LV60PG484AC2/I1
 //Device: GW5AT-60
 //Device Version: B
-//Created Time: Fri Feb 27 22:22:53 2026
+//Created Time: Wed Mar 11 19:31:14 2026
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
@@ -14,6 +14,7 @@
     Gowin_PLL_MOD your_instance_name(
         .lock(lock), //output lock
         .clkout0(clkout0), //output clkout0
+        .clkout1(clkout1), //output clkout1
         .clkout2(clkout2), //output clkout2
         .mdrdo(mdrdo), //output [7:0] mdrdo
         .clkin(clkin), //input clkin

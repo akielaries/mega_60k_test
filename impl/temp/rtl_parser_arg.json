@@ -2,6 +2,14 @@
  "Device" : "GW5AT-60B",
  "Files" : [
   {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_memmap.v",
    "Type" : "verilog"
   },
@@ -59,14 +67,6 @@
   },
   {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ahb1_sram.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/apb_ahb_bridge.v",
    "Type" : "verilog"
   }
  ],

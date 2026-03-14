@@ -11,6 +11,7 @@
     Gowin_PLL your_instance_name(
         .clkin(clkin), //input  clkin
         .clkout0(clkout0), //output  clkout0
+        .clkout1(clkout1), //output  clkout1
         .clkout2(clkout2), //output  clkout2
         .lock(lock), //output  lock
         .mdopc(mdopc), //input [1:0] mdopc
