@@ -17,8 +17,15 @@ Analyzing Verilog file '/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_60k_test/src/top.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v'
-WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_60k_test/src/top.v":273)
+WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_60k_test/src/top.v":281)
 Compiling module 'top'("/home/akiel/trunk/pub/mega_60k_test/src/top.v":17)
+Compiling module 'ws2812_driver'("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":1)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":31)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":49)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":95)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":105)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":108)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":117)
 Compiling module 'Gowin_PLL'("/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll.v":1)
 Compiling module 'Gowin_PLL_MOD'("/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll/gowin_pll_mod.v":11)
 Compiling module 'PLL_INIT(MULTI_FAC=20)'("/home/akiel/trunk/pub/mega_60k_test/src/pll_init.v":4)
@@ -44,13 +51,6 @@ Compiling module 'system_info'("/home/akiel/trunk/pub/mega_60k_test/src/sysinfo.
 Compiling module 'sysinfo_regs'("/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v":7)
 Compiling module 'gpio'("/home/akiel/trunk/pub/mega_60k_test/src/gpio.v":1)
 Compiling module 'gpio_regs'("/home/akiel/trunk/pub/mega_60k_test/src/gpio_regs.v":7)
-Compiling module 'ws2812_driver'("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":1)
-WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":31)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":49)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":95)
-WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":105)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":108)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v":117)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

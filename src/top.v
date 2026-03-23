@@ -79,6 +79,14 @@ module top (
 
     assign BOOT_LED_A = gpio1_out;
 
+    reg [23:0] ws_color;
+
+    ws2812_driver ws_drv (
+        .clk(HCLK),
+        .rstn(hwRstn),
+        .ws_out(WS2812_LED)
+    );
+
     // =========================================================================
     // APB1 wires from Cortex-M1 APB bridge
     // =========================================================================
@@ -378,14 +386,6 @@ module top (
         .PRDATA   (slave_PRDATA),
         .PREADY   (slave_PREADY),
         .PSLVERR  (slave_PSLVERR)
-    );
-
-    reg [23:0] ws_color;
-
-    ws2812_driver ws_drv (
-        .clk(HCLK),
-        .rstn(hwRstn),
-        .ws_out(WS2812_LED)
     );
 /*
     uart_hello hello_inst (

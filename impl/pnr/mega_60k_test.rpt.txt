@@ -12,27 +12,27 @@
   <Part Number>: GW5AT-LV60PG484AC2/I1
   <Device>: GW5AT-60
   <Device Version>: B
-  <Created Time>:Thu Mar 12 20:29:28 2026
+  <Created Time>:Sun Mar 22 14:49:14 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
-    Placement Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Placement Phase 2: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
-    Placement Phase 3: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
-    Total Placement: CPU time = 0h 0m 19s, Elapsed time = 0h 0m 19s
+    Placement Phase 0: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+    Placement Phase 1: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    Placement Phase 2: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
+    Placement Phase 3: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
+    Total Placement: CPU time = 0h 0m 22s, Elapsed time = 0h 0m 22s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.007s, Elapsed time = 0h 0m 0.006s
-    Routing Phase 1: CPU time = 0h 0m 48s, Elapsed time = 0h 0m 48s
-    Routing Phase 2: CPU time = 0h 0m 0.195s, Elapsed time = 0h 0m 0.188s
+    Routing Phase 0: CPU time = 0h 0m 0.007s, Elapsed time = 0h 0m 0.007s
+    Routing Phase 1: CPU time = 0h 1m 1s, Elapsed time = 0h 1m 1s
+    Routing Phase 2: CPU time = 0h 0m 0.224s, Elapsed time = 0h 0m 0.217s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 49s, Elapsed time = 0h 0m 48s
+    Total Routing: CPU time = 0h 1m 2s, Elapsed time = 0h 1m 1s
  Generate output files:
     CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 
- Total Time and Memory Usage: CPU time = 0h 1m 10s, Elapsed time = 0h 1m 9s, Peak memory usage = 7536MB
+ Total Time and Memory Usage: CPU time = 0h 1m 26s, Elapsed time = 0h 1m 26s, Peak memory usage = 3925MB
 
 
 3. Resource Usage Summary
@@ -41,14 +41,14 @@
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
   Logic                       | 10939/59904                         |  19%
-    --LUT,ALU,ROM16           | 10939(10530 LUT, 409 ALU, 0 ROM16)  | -
+    --LUT,ALU,ROM16           | 10939(10526 LUT, 413 ALU, 0 ROM16)  | -
     --SSRAM(RAM16)            | 0                                   | -
   Register                    | 8710/60780                          |  15%
     --Logic Register as Latch | 0/59904                             |  0%
     --Logic Register as FF    | 8686/59904                          |  15%
     --I/O Register as Latch   | 0/876                               |  0%
     --I/O Register as FF      | 24/876                              |  3%
-  CLS                         | 9313/29952                          |  32%
+  CLS                         | 9182/29952                          |  31%
   I/O Port                    | 93/297                              |  32%
   I/O Buf                     | 90                                  | -
     --Input Buf               | 11                                  | -
@@ -76,7 +76,7 @@
   --------------------------------------
   I/O Bank  | Usage       | Utilization 
   --------------------------------------
-  bank 1   | 17/25       | 68%         
+  bank 1   | 11/25       | 44%         
   bank 2   | 12/26       | 47%         
   bank 3   | 0/8         | 0%          
   bank 4   | 0/16        | 0%          
@@ -84,7 +84,7 @@
   bank 6   | 3/20        | 15%         
   bank 7   | 4/24        | 17%         
   bank 8   | 5/24        | 21%         
-  bank 9   | 25/66       | 38%         
+  bank 9   | 31/66       | 47%         
   bank 10  | 16/25       | 64%         
   bank 11  | 10/25       | 40%         
   bank 12  | 0/4         | 0%          
@@ -111,12 +111,12 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  GTX_CLK        | PRIMARY        |  PTR1 PTR2 PBR1 PBR2
+  GTX_CLK        | PRIMARY        |  PTR1 PTR2
   EPHY_CLK_d     | PRIMARY        |  PBR1
   gowin_add_ibuf_net_HCLK| PRIMARY        |  PTR0 PTR1 PTR2 PTR3 PBR0 PBR1 PBR2 PBR3
-  Cortex_M1_instance/RGMII_RXC_d| PRIMARY        |  PTR1 PTR2 PBR1 PBR2
-  Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PTR1 PBR2
-  Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out| PRIMARY        |  PTR0 PTR1 PBR0 PBR1 PBR2
+  Cortex_M1_instance/RGMII_RXC_d| PRIMARY        |  PTR0 PTR1 PTR2
+  Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PBR1 PBR2
+  Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out| PRIMARY        |  PTR0 PTR1 PBR0 PBR1
   gowin_add_ibuf_net_hwRstn| LW             |  -
   Cortex_M1_instance/dbgRstGen| LW             |  -
   Cortex_M1_instance/AHB1HRESET_d| LW             |  -
@@ -158,7 +158,7 @@ RGMII_TXD[3]         | -         | E22/2         | Y          | out   | IOT140[A
 MDC                  | -         | V18/8         | Y          | out   | IOB81[A] | GCLKT_11        | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
 EPHY_RST_N           | -         | W20/8         | Y          | out   | IOB93[B] | GCLKC_9         | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
 EPHY_CLK             | -         | V19/8         | Y          | out   | IOB81[B] | GCLKC_11        | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
-DDR_INIT_COMPLETE_O  | -         | A14/1         | N          | out   | IOT95[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
+DDR_INIT_COMPLETE_O  | -         | F16/1         | N          | out   | IOT89[A] | Q0REF_T_IN0     | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
 DDR_ADDR_O[0]        | -         | M1/10         | Y          | out   | IOL52[A] | -               | SSTL15_I   | 12    | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE         
 DDR_ADDR_O[1]        | -         | K2/11         | Y          | out   | IOL39[A] | -               | SSTL15_I   | 12    | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE         
 DDR_ADDR_O[2]        | -         | G2/11         | Y          | out   | IOL37[B] | -               | SSTL15_I   | 12    | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE         
@@ -190,19 +190,19 @@ DDR_DQM_O[1]         | -         | V7/9          | Y          | out   | IOB58[A]
 GPIO[0]              | -         | R17/6         | Y          | io    | IOB136[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
 GPIO[1]              | -         | T18/6         | Y          | io    | IOB144[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
 GPIO[2]              | -         | E13/1         | Y          | io    | IOT78[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[3]              | -         | W12/9         | Y          | io    | IOB52[B] | -               | LVCMOS15   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
-GPIO[4]              | -         | AA9/9         | Y          | io    | IOB1[A]  | -               | LVCMOS15   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
-GPIO[5]              | -         | F14/1         | N          | io    | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[6]              | -         | D14/1         | N          | io    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[7]              | -         | D15/1         | N          | io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[8]              | -         | C13/1         | N          | io    | IOT93[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[9]              | -         | B13/1         | N          | io    | IOT93[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[10]             | -         | A13/1         | N          | io    | IOT95[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[11]             | -         | F15/1         | N          | io    | IOT91[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[12]             | -         | D16/1         | N          | io    | IOT87[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[13]             | -         | F16/1         | N          | io    | IOT89[A] | Q0REF_T_IN0     | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[14]             | -         | E16/1         | N          | io    | IOT87[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
-GPIO[15]             | -         | E17/1         | N          | io    | IOT89[B] | Q0REF_C_IN0     | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
+GPIO[3]              | -         | W12/9         | Y          | io    | IOB52[B] | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[4]              | -         | AA9/9         | Y          | io    | IOB1[A]  | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[5]              | -         | AA10/9        | Y          | io    | IOB1[B]  | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[6]              | -         | AB10/9        | Y          | io    | IOB3[B]  | BPLL0_C_IN1/BPLL0_C_FB0 | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[7]              | -         | AA11/9        | Y          | io    | IOB20[A] | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[8]              | -         | AB11/9        | Y          | io    | IOB18[B] | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[9]              | -         | W10/9         | Y          | io    | IOB35[B] | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[10]             | -         | Y11/9         | Y          | io    | IOB20[B] | -               | LVCMOS15   | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | OFF          
+GPIO[11]             | -         | D16/1         | N          | io    | IOT87[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
+GPIO[12]             | -         | D15/1         | N          | io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
+GPIO[13]             | -         | D14/1         | N          | io    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
+GPIO[14]             | -         | F14/1         | N          | io    | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
+GPIO[15]             | -         | E16/1         | N          | io    | IOT87[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
 JTAG_7_SWDIO         | -         | AA21/7        | Y          | io    | IOB102[B] | D12             | LVCMOS33   | 8     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
 JTAG_9_SWDCLK        | -         | AB20/8        | Y          | io    | IOB85[B] | CSO_B/DOUT      | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF          
 BOOT_LED_A           | -         | P16/6         | Y          | io    | IOB136[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE         
@@ -240,20 +240,20 @@ Loc./Bank| Signal               | Dir.  | Site     | CFG             | IO Type  
 E13/1    | GPIO[2]              | io    | IOT78[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 E14/1    | LOCKUP               | out   | IOT78[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE         
 F13/1    | HALTED               | out   | IOT80[A] | TPLL0_T_IN1/TPLL0_T_FB1 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE         
-F14/1    | GPIO[5]              | io    | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-D14/1    | GPIO[6]              | io    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-D15/1    | GPIO[7]              | io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+F14/1    | GPIO[14]             | io    | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+D14/1    | GPIO[13]             | io    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+D15/1    | GPIO[12]             | io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 C14/1    | GWCT_TX              | out   | IOT85[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE         
 C15/1    | GWCT_RX              | in    | IOT85[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-E16/1    | GPIO[14]             | io    | IOT87[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-D16/1    | GPIO[12]             | io    | IOT87[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-F16/1    | GPIO[13]             | io    | IOT89[A] | Q0REF_T_IN0     | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-E17/1    | GPIO[15]             | io    | IOT89[B] | Q0REF_C_IN0     | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-F15/1    | GPIO[11]             | io    | IOT91[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-C13/1    | GPIO[8]              | io    | IOT93[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-B13/1    | GPIO[9]              | io    | IOT93[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-A13/1    | GPIO[10]             | io    | IOT95[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
-A14/1    | DDR_INIT_COMPLETE_O  | out   | IOT95[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE         
+E16/1    | GPIO[15]             | io    | IOT87[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+D16/1    | GPIO[11]             | io    | IOT87[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+F16/1    | DDR_INIT_COMPLETE_O  | out   | IOT89[A] | Q0REF_T_IN0     | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE         
+E17/1    | -                    | in    | IOT89[B] | Q0REF_C_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+F15/1    | -                    | in    | IOT91[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+C13/1    | -                    | in    | IOT93[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+B13/1    | -                    | in    | IOT93[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+A13/1    | -                    | in    | IOT95[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
+A14/1    | -                    | in    | IOT95[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 B15/1    | -                    | in    | IOT97[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 B16/1    | -                    | in    | IOT97[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 A15/1    | -                    | in    | IOT99[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
@@ -289,10 +289,10 @@ G21/2    | RGMII_RXC            | in    | IOT144[A] | -               | LVCMOS33
 G22/2    | RGMII_RX_CTL         | in    | IOT144[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 T16/2    | -                    | in    | IOT146[A] | TPLL1_T_IN1/TPLL1_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF          
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-AA9/9    | GPIO[4]              | io    | IOB1[A]  | -               | LVCMOS15 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-AA10/9   | -                    | in    | IOB1[B]  | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+AA9/9    | GPIO[4]              | io    | IOB1[A]  | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+AA10/9   | GPIO[5]              | io    | IOB1[B]  | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 T3/9     | -                    | in    | IOB3[A]  | BPLL0_T_IN1/BPLL0_T_FB0 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-AB10/9   | -                    | in    | IOB3[B]  | BPLL0_C_IN1/BPLL0_C_FB0 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+AB10/9   | GPIO[6]              | io    | IOB3[B]  | BPLL0_C_IN1/BPLL0_C_FB0 | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 T1/9     | -                    | in    | IOB5[A]  | BPLL0_T_IN2/BPLL0_T_FB1 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 U1/9     | -                    | in    | IOB5[B]  | BPLL0_C_IN2/BPLL0_C_FB1 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 U2/9     | -                    | in    | IOB7[A]  | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
@@ -306,9 +306,9 @@ Y1/9     | -                    | in    | IOB14[B] | -               | LVCMOS15 
 U3/9     | -                    | in    | IOB16[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 V3/9     | -                    | in    | IOB16[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 AB12/9   | -                    | in    | IOB18[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-AB11/9   | -                    | in    | IOB18[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-AA11/9   | -                    | in    | IOB20[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-Y11/9    | -                    | in    | IOB20[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+AB11/9   | GPIO[8]              | io    | IOB18[B] | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+AA11/9   | GPIO[7]              | io    | IOB20[A] | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+Y11/9    | GPIO[10]             | io    | IOB20[B] | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 AA1/9    | DDR_DQ_IO[4]         | io    | IOB22[A] | -               | SSTL15_I | 12    | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF          
 AB1/9    | DDR_DQ_IO[7]         | io    | IOB22[B] | -               | SSTL15_I | 12    | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF          
 AB3/9    | DDR_DQ_IO[1]         | io    | IOB24[A] | -               | SSTL15_I | 12    | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF          
@@ -322,7 +322,7 @@ AA4/9    | DDR_DQM_O[0]         | out   | IOB31[B] | GCLKC_14        | SSTL15_I 
 V4/9     | DDR_DQ_IO[3]         | io    | IOB33[A] | GCLKT_15        | SSTL15_I | 12    | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF          
 W4/9     | -                    | in    | IOB33[B] | GCLKC_15        | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 W11/9    | -                    | in    | IOB35[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-W10/9    | -                    | in    | IOB35[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+W10/9    | GPIO[9]              | io    | IOB35[B] | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 R4/9     | -                    | in    | IOB38[A] | GCLKT_13        | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 T4/9     | -                    | in    | IOB38[B] | GCLKC_13        | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 T5/9     | -                    | in    | IOB40[A] | GCLKT_12        | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
@@ -336,7 +336,7 @@ T6/9     | -                    | in    | IOB48[B] | -               | LVCMOS15 
 Y6/9     | -                    | in    | IOB50[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 AA6/9    | -                    | in    | IOB50[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 Y12/9    | -                    | in    | IOB52[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
-W12/9    | GPIO[3]              | io    | IOB52[B] | -               | LVCMOS15 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
+W12/9    | GPIO[3]              | io    | IOB52[B] | -               | LVCMOS15 | 12    | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 AB13/9   | -                    | in    | IOB54[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 AA13/9   | hwRstn               | in    | IOB54[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
 Y13/9    | -                    | in    | IOB56[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF          
