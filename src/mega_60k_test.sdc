@@ -15,4 +15,9 @@ create_clock -name ddr3_sys_clk -period 20 -waveform {0 10} [get_pins {Cortex_M1
 create_clock -name gtx_clk_125 -period 8 -waveform {0 4} [get_pins {u_Gowin_PLL/u_pll/PLLA_inst/CLKOUT0}]
 create_clock -name rgmii_rxc   -period 8 -waveform {0 4} [get_ports {RGMII_RXC}]
 
-set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}]
+// multiflex TX engine clock: 100 MHz from PLL clkout1
+// MULTIFLEX_CLK is an output pin driven by the TX divider inside the module
+create_clock -name multiflex_clk -period 2.5 -waveform {0 1.25} [get_pins {u_multiflex_pll/u_pll/PLLA_inst/CLKOUT1}]
+set_false_path -to [get_ports {MULTIFLEX_CLK}]
+
+set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}] -group [get_clocks {multiflex_clk}]

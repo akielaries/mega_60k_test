@@ -68,6 +68,26 @@
   {
    "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll_ffc/gowin_pll_ffc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll_ffc/gowin_pll_ffc_mod.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/multiflex.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/multiflex_regs.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_60k_test/src/multiflex_tx.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

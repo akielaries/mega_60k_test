@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="47" Alu="19" Lut="87" T_Register="8710(47)" T_Alu="374(19)" T_Lut="10555(87)" T_MULT27X36="2(0)" T_Bsram="86(0)">
- <SubModule name="ws_drv" Register="51" Lut="125" T_Register="51(51)" T_Lut="125(125)"/>
- <SubModule name="u_Gowin_PLL" T_Register="101(0)" T_Alu="18(0)" T_Lut="166(0)" T_Bsram="1(0)">
+<Module name="top" Register="47" Alu="19" Lut="162" T_Register="9114(47)" T_Alu="420(19)" T_Lut="10918(162)" T_MULT27X36="2(0)" T_Bsram="87(0)">
+ <SubModule name="ws_drv" Register="51" Lut="119" T_Register="51(51)" T_Lut="119(119)"/>
+ <SubModule name="u_Gowin_PLL" T_Register="100(0)" T_Alu="18(0)" T_Lut="149(0)" T_Bsram="1(0)">
   <SubModule name="u_pll"/>
-  <SubModule name="u_pll_init" Register="101" Alu="18" Lut="166" Bsram="1" T_Register="101(101)" T_Alu="18(18)" T_Lut="166(166)" T_Bsram="1(1)"/>
+  <SubModule name="u_pll_init" Register="100" Alu="18" Lut="149" Bsram="1" T_Register="100(100)" T_Alu="18(18)" T_Lut="149(149)" T_Bsram="1(1)"/>
  </SubModule>
  <SubModule name="Cortex_M1_instance" Register="8014" Alu="329" Lut="9845" MULT27X36="2" Bsram="77" T_Register="8014(8014)" T_Alu="329(329)" T_Lut="9845(9845)" T_MULT27X36="2(2)" T_Bsram="77(77)"/>
  <SubModule name="ahb_ram_inst" Lut="10" Bsram="8" T_Lut="10(10)" T_Bsram="8(8)"/>
- <SubModule name="gwct_inst" T_Register="386(0)" T_Alu="8(0)" T_Lut="224(0)">
-  <SubModule name="uart_inst" Register="71" Lut="100" T_Register="71(71)" T_Lut="100(100)"/>
-  <SubModule name="packet_inst" Register="227" Alu="8" Lut="109" T_Register="227(227)" T_Alu="8(8)" T_Lut="109(109)"/>
+ <SubModule name="gwct_inst" T_Register="386(0)" T_Alu="8(0)" T_Lut="223(0)">
+  <SubModule name="uart_inst" Register="71" Lut="101" T_Register="71(71)" T_Lut="101(101)"/>
+  <SubModule name="packet_inst" Register="227" Alu="8" Lut="107" T_Register="227(227)" T_Alu="8(8)" T_Lut="107(107)"/>
   <SubModule name="apb_master_inst" Register="88" Lut="15" T_Register="88(88)" T_Lut="15(15)"/>
  </SubModule>
- <SubModule name="apb_memmap_inst" Lut="46" T_Register="111(0)" T_Lut="98(46)">
+ <SubModule name="apb_memmap_inst" T_Register="111(0)" T_Lut="52(0)">
   <SubModule name="sysinfo_inst" T_Register="12(0)" T_Lut="17(0)">
    <SubModule name="u_regs" Register="12" Lut="17" T_Register="12(12)" T_Lut="17(17)"/>
   </SubModule>
   <SubModule name="gpio_inst" T_Register="99(0)" T_Lut="35(0)">
    <SubModule name="u_regs" Register="99" Lut="35" T_Register="99(99)" T_Lut="35(35)"/>
   </SubModule>
+ </SubModule>
+ <SubModule name="u_multiflex_pll" T_Register="98(0)" T_Alu="18(0)" T_Lut="146(0)" T_Bsram="1(0)">
+  <SubModule name="u_pll"/>
+  <SubModule name="u_pll_init" Register="98" Alu="18" Lut="146" Bsram="1" T_Register="98(98)" T_Alu="18(18)" T_Lut="146(146)" T_Bsram="1(1)"/>
+ </SubModule>
+ <SubModule name="mfx_inst" Register="97" Alu="7" Lut="14" T_Register="307(97)" T_Alu="28(7)" T_Lut="212(14)">
+  <SubModule name="regs" Register="44" Lut="32" T_Register="44(44)" T_Lut="32(32)"/>
+  <SubModule name="tx" Register="166" Alu="21" Lut="166" T_Register="166(166)" T_Alu="21(21)" T_Lut="166(166)"/>
  </SubModule>
 </Module>

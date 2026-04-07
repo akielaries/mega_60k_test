@@ -28,6 +28,10 @@ module top (
     output HALTED,
     inout BOOT_LED_A,
     output WS2812_LED,
+    inout          MULTIFLEX_CLK,
+    output [2:0]   MULTIFLEX_TX,
+    input  [2:0]   MULTIFLEX_RX,
+    output         MULTIFLEX_SYNC,
     // RGMII Ethernet (RTL8211FI-CG)
     output        RGMII_TXC,
     output        RGMII_TX_CTL,
@@ -155,7 +159,7 @@ module top (
         pll_lock_rr <= pll_lock_r;
     end
 
-    //Gowin_PLL instantiation
+    //Gowin_PLL instantiation for DDR3 and ethernet clocks
     Gowin_PLL u_Gowin_PLL
     (
         .lock(pll_lock),
@@ -375,6 +379,9 @@ module top (
     // =========================================================================
     // apb_memmap slave — sees muxed bus
     // =========================================================================
+    wire [31:0] memmap_prdata;
+    wire        memmap_pready;
+
     apb_memmap apb_memmap_inst (
         .APBCLK   (APB1PCLK),
         .APBRESET (APB1PRESET),
@@ -383,10 +390,53 @@ module top (
         .PENABLE  (mux_PENABLE),
         .PWRITE   (mux_PWRITE),
         .PWDATA   (mux_PWDATA),
-        .PRDATA   (slave_PRDATA),
-        .PREADY   (slave_PREADY),
+        .PRDATA   (memmap_prdata),
+        .PREADY   (memmap_pready),
         .PSLVERR  (slave_PSLVERR)
     );
+
+    // =========================================================================
+    // PLL: 50 MHz HCLK -> 400 MHz for multiflex TX engine
+    // =========================================================================
+    wire multiflex_clk_fast;
+    Gowin_PLL_ffc u_multiflex_pll (
+        .clkin  (HCLK),
+        .clkout1(multiflex_clk_fast),
+        .clkout0(),
+        .mdclk  (HCLK)
+    );
+
+    // =========================================================================
+    // multiflex peripheral at APB offset 0x60 (24 bytes: 0x60-0x77)
+    // fabric clock: 400? MHz from PLL (APB signals from Cortex-M1 at 50 MHz;
+    // 400? MHz = 2x HCLK so clocks are synchronous -- no metastability risk)
+    // =========================================================================
+    wire        mfx_sel    = mux_PSEL && (mux_PADDR[19:0] >= 20'h60 &&
+                                          mux_PADDR[19:0] <  20'h78);
+    wire [31:0] mfx_prdata;
+    wire        mfx_pready;
+
+    multiflex #(.NUM_LANES(3)) mfx_inst (
+        .pclk    (APB1PCLK),
+        .prstn   (APB1PRESET),
+        .clk     (multiflex_clk_fast),
+        .paddr   (mux_PADDR),
+        .psel    (mux_PSEL & mfx_sel),
+        .penable (mux_PENABLE),
+        .pwrite  (mux_PWRITE),
+        .pwdata  (mux_PWDATA),
+        .prdata  (mfx_prdata),
+        .pready  (mfx_pready),
+        .pslverr (),
+        .mfx_clk  (MULTIFLEX_CLK),
+        .mfx_tx   (MULTIFLEX_TX),
+        .mfx_sync (MULTIFLEX_SYNC)
+    );
+
+    // route responses back to APB bus
+    assign slave_PRDATA = mfx_sel ? mfx_prdata  : memmap_prdata;
+    assign slave_PREADY = mfx_sel ? mfx_pready  : memmap_pready;
+
 /*
     uart_hello hello_inst (
         .clk  (HCLK),

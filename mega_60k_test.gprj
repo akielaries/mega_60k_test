@@ -12,12 +12,17 @@
         <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_pll/gowin_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll_ffc/gowin_pll_ffc.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll_ffc/gowin_pll_ffc_mod.v" type="file.verilog" enable="1"/>
         <File path="src/gpio.v" type="file.verilog" enable="1"/>
         <File path="src/gpio_regs.v" type="file.verilog" enable="1"/>
         <File path="src/gwct_apb_master.v" type="file.verilog" enable="1"/>
         <File path="src/gwct_bridge.v" type="file.verilog" enable="1"/>
         <File path="src/gwct_packet.v" type="file.verilog" enable="1"/>
         <File path="src/gwct_uart.v" type="file.verilog" enable="1"/>
+        <File path="src/multiflex.v" type="file.verilog" enable="1"/>
+        <File path="src/multiflex_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/multiflex_tx.v" type="file.verilog" enable="1"/>
         <File path="src/pll_init.v" type="file.verilog" enable="1"/>
         <File path="src/sysinfo.v" type="file.verilog" enable="1"/>
         <File path="src/sysinfo_regs.v" type="file.verilog" enable="1"/>

@@ -21,6 +21,11 @@
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/sysinfo_regs.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/top.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_60k_test/src/ws2812_driver.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll_ffc/gowin_pll_ffc.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/gowin_pll_ffc/gowin_pll_ffc_mod.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/multiflex.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/multiflex_regs.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_60k_test/src/multiflex_tx.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
